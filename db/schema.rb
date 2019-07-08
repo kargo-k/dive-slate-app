@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_08_202230) do
+ActiveRecord::Schema.define(version: 2019_07_08_220617) do
 
   create_table "dive_equipments", force: :cascade do |t|
     t.integer "dive_id"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_07_08_202230) do
   create_table "divesites", force: :cascade do |t|
     t.string "name"
     t.integer "lattitude"
-    t.integer "longitutde"
+    t.integer "longitude"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2019_07_08_202230) do
     t.string "name"
     t.string "certification"
     t.integer "age"
-    t.string "city"
+    t.string "country"
     t.integer "total_dives"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

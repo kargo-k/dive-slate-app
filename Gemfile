@@ -7,6 +7,8 @@ ruby '2.6.1'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+# Use faker gem to generate seed data
+gem 'faker'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
