@@ -711,3 +711,36 @@ Migrating to RenameLongitutdeInDivesitesToLongitude (20190708220617)
   ↳ db/seeds.rb:103
   [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
   ↳ db/seeds.rb:103
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Karen/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to ChangeColumnLattitudeToLatitudeInDivesites (20190708234449)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Karen/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190708234449_change_column_lattitude_to_latitude_in_divesites.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adivesites" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "latitude" integer DEFAULT NULL, "longitude" integer DEFAULT NULL, "description" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190708234449_change_column_lattitude_to_latitude_in_divesites.rb:3
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "adivesites" ("id","name","latitude","longitude","description","created_at","updated_at")
+                     SELECT "id","name","lattitude","longitude","description","created_at","updated_at" FROM "divesites"[0m
+  ↳ db/migrate/20190708234449_change_column_lattitude_to_latitude_in_divesites.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "divesites"[0m
+  ↳ db/migrate/20190708234449_change_column_lattitude_to_latitude_in_divesites.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "divesites" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "latitude" integer DEFAULT NULL, "longitude" integer DEFAULT NULL, "description" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190708234449_change_column_lattitude_to_latitude_in_divesites.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "divesites" ("id","name","latitude","longitude","description","created_at","updated_at")
+                     SELECT "id","name","latitude","longitude","description","created_at","updated_at" FROM "adivesites"[0m
+  ↳ db/migrate/20190708234449_change_column_lattitude_to_latitude_in_divesites.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adivesites"[0m
+  ↳ db/migrate/20190708234449_change_column_lattitude_to_latitude_in_divesites.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190708234449"]]
+  ↳ /Users/Karen/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Karen/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/Karen/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Karen/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Karen/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Karen/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
