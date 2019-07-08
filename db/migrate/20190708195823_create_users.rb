@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :certification
       t.integer :age
-      t.string :city
+      t.string :country
       t.integer :total_dives
 
       t.timestamps
