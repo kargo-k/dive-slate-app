@@ -55,43 +55,43 @@ Equipment.create(name: "weights", specs: "10 kg")
 # Seeding database with divesite information
 Divesite.create(
     name: "East Sangat Japanese Gunboat",
-    lattitude: "N 11° 58' 32.000000\"",
+    latitude: "N 11° 58' 32.000000\"",
     longitude: "E 120° 4' 40.200000\"",
     description: "Sunken WWII Japanese Gunboat"
     )
 Divesite.create(
     name: "Siete Pecados Islands",
-    lattitude: "N 11° 59' 1.400000\"",
+    latitude: "N 11° 59' 1.400000\"",
     longitude: "E 120° 13' 54.100000\"",
     description: "Seven small islands with steep cliffs covered in coral"
     )
 Divesite.create(
     name: "Shark Wall",
-    lattitude: "N 11° 20' 6.400000\"",
+    latitude: "N 11° 20' 6.400000\"",
     longitude: "E 124° 6' 33.400000\"",
     description: "Thresher shark cleaning station"
     )
 Divesite.create(
     name: "Raggie Cave",
-    lattitude: "S 30° 15' 45.000000\"",
+    latitude: "S 30° 15' 45.000000\"",
     longitude: "E 30° 49' 40.000000\"",
     description: "Large cave and the best spot to view big groups of ragged-tooth sharks during the winter months"
     )
 Divesite.create(
     name: "Pointe Des Pecheurs",
-    lattitude: "N 17° 38' 7.900000\"",
+    latitude: "N 17° 38' 7.900000\"",
     longitude: "W 148° 37' 6.800000\"",
     description: "Incredible biodiversity of the dive sites showcase the rich flora and fauna, from colourfull nudibranches to Lemon sharks"
     )
 Divesite.create(
     name: "Old Kona Airport South Mooring",
-    lattitude: "N 19° 38' 37.200000\"",
+    latitude: "N 19° 38' 37.200000\"",
     longitude: "W 156° 0' 56.400000\"",
     description: "Manta feeding station"
     )
 Divesite.create(
     name: "Honaunau Bay/Two Step",
-    lattitude: "N 19° 25' 25.000000\"",
+    latitude: "N 19° 25' 25.000000\"",
     longitude: "W 155° 54' 43.000000\"",
     description: "Hawaiian spinner dolphins feed at night then rest and take care of their young in the calm inshore waters like Honaunau Bay during daylight"
     )
