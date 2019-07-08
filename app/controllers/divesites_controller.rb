@@ -1,0 +1,2 @@
+class DivesitesController < ApplicationController
+end

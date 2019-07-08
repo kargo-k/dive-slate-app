@@ -1,0 +1,2 @@
+class DiveshopsController < ApplicationController
+end

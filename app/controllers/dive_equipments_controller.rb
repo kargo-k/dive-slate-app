@@ -1,0 +1,2 @@
+class DiveEquipmentsController < ApplicationController
+end
