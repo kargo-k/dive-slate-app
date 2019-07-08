@@ -1,2 +1,5 @@
 # Ignores tmp folder
 tmp
+
+# Ignore db
+db/development.sqlite3
