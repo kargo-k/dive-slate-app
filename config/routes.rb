@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :dive_equipments
   resources :dives
   resources :equipment
@@ -9,5 +10,9 @@ Rails.application.routes.draw do
 
   get '/users/:id/dives', to: 'dives#index', as: 'all_dives'
   get '/users/:id/dives/:id', to: 'dives#show', as: 'show_dive'
+
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 
 end
