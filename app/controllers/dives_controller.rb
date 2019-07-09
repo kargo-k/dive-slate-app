@@ -5,13 +5,25 @@ class DivesController < ApplicationController
 
     def create
         @dive = Dive.new(dive_params)
-        if @dive
-            redirect_to @dive
+        # byebug
+        if @dive.save
+            redirect_to all_dives_path(@dive.user)
         else
             render :new
         end
     end
 
+    def show
+        @dive = Dive.find(params[:id])
+    end
+
+    def index
+        # byebug
+        @user = User.find(params[:id])
+
+        
+    end
+    
     private
 
         def dive_params

@@ -1,4 +1,9 @@
 <%= form_for @dive do |f| %>
+    <label>Username</label>
+    <%= f.collection_select :user_id, User.all, :id, :username %>
+
+    <br>
+
     <label>Dive Shop</label>
     <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name %>
 
