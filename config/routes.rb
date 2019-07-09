@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :dive_equipments
-  resources :dives
+  # resources :dives
   resources :equipment
   resources :users
   resources :divesites
@@ -9,10 +9,10 @@ Rails.application.routes.draw do
 
   get '/users/:id/dives/new', to: 'dives#new'
 
-  get '/users/:id/dives', to: 'dives#index', as: 'divers_dives'
+  get '/users/:id/dives/', to: 'dives#index', as: 'divers_dives'
   
-  post '/users/:id/dives/:id', to: 'dives#create'
+  post '/users/:id/dives/:id/', to: 'dives#create'
   
-  get '/users/:id/dives/:id', to: 'dives#show'
+  get '/dives/:id/', to: 'dives#show', as: 'show_dive'
 
 end

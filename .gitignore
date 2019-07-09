@@ -10,4 +10,4 @@ log
 *.log
 *.iml
 *.swp
-*.byebug_history
+.byebug_history

@@ -2,7 +2,7 @@
 
 <ol>
     <% @user.dives.each do |dive| %>
-        <li><b><%=dive.divesite.name %>: </b>
+        <li><b><%= link_to dive.divesite.name, show_dive_path(dive) %>: </b>
             <%=dive.description%>
         </li>
     <% end %>
