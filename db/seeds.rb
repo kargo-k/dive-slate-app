@@ -16,11 +16,19 @@ certifications = [
     "DIVE INSTRUCTOR"
 ]
 
+usernames = [
+    "scubaDifer",
+    "scoobie",
+    "Dife4lyfe",
+    "difingunderwater",
+    "scoobadife"
+]
+
 # Creates 10 users using Faker data
 10.times do
-    username = "ScubaDifer#{(1000..9999).to_a.sample}"
+    username = "#{usernames.sample}#{(1000..9999).to_a.sample}"
     password = "0000"
-    name = Faker::Name.name
+    name = Faker::FunnyName.name
     certification = certifications.sample
     age = (12..60).to_a.sample
     country = Faker::Address.country
@@ -37,20 +45,20 @@ certifications = [
 end
 
 # Seeding database with equipment information
-Equipment.create(name: "booties", specs: "3 mm")
-Equipment.create(name: "wetsuit", specs: "3 mm")
-Equipment.create(name: "wetsuit", specs: "5 mm")
-Equipment.create(name: "wetsuit", specs: "7 mm")
-Equipment.create(name: "fins", specs: "")
-Equipment.create(name: "gloves", specs: "2 mm")
-Equipment.create(name: "hood", specs: "2 mm")
-Equipment.create(name: "rashguard", specs: "1 mm")
-Equipment.create(name: "drysuit", specs: "")
-Equipment.create(name: "weights", specs: "2 kg")
-Equipment.create(name: "weights", specs: "4 kg")
-Equipment.create(name: "weights", specs: "6 kg")
-Equipment.create(name: "weights", specs: "8 kg")
-Equipment.create(name: "weights", specs: "10 kg")
+Equipment.create(name: "booties - 3 mm")
+Equipment.create(name: "wetsuit - 3 mm")
+Equipment.create(name: "wetsuit - 5 mm")
+Equipment.create(name: "wetsuit - 7 mm")
+Equipment.create(name: "fins")
+Equipment.create(name: "gloves - 2 mm")
+Equipment.create(name: "hood - 2 mm")
+Equipment.create(name: "rashguard - 1 mm")
+Equipment.create(name: "drysuit - ")
+Equipment.create(name: "weights - 2 kg")
+Equipment.create(name: "weights - 4 kg")
+Equipment.create(name: "weights - 6 kg")
+Equipment.create(name: "weights - 8 kg")
+Equipment.create(name: "weights - 10 kg")
 
 # Seeding database with divesite information
 Divesite.create(
@@ -97,8 +105,16 @@ Divesite.create(
     )
 
 # Create diveshop data using Faker gem
-5.times do
-    name = Faker::FunnyName.name
+shops = [
+    "Peter's Dive Shop",
+    "Bongo Bongo Divers",
+    "Silbatan Divers",
+    "Big Island Diving",
+    "diveUNDA"
+]
+
+shops.each do |shop|
+    name = shop
     address = Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.country
     Diveshop.create(name: name, address: address)
 end
