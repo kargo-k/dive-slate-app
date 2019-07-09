@@ -1,0 +1,6 @@
+<h2>All Dive Sites</h2>
+<ul>
+    <% @divesites.each do |divesite| %>
+        <li><%= link_to divesite.name, divesite %></li>
+    <% end %>
+</ul>
