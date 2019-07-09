@@ -21,6 +21,13 @@ class DivesController < ApplicationController
     def index
         @user = User.find(params[:id])
     end
+
+    def destroy
+        @user = @dive.user
+        @dive = Dive.find(params[:id])
+        @dive.delete
+        redirect_to divers_dives_path(@user)
+    end
     
     private
 
