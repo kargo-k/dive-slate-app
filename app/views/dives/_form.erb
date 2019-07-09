@@ -1,0 +1,48 @@
+<%= form_for @dive do |f| %>
+    <label>Username</label>
+    <%= f.collection_select :user_id, User.all, :id, :username %>
+
+    <br>
+
+    <label>Dive Shop</label>
+    <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name %>
+
+    <br>
+
+    <label>Dive Site</label>
+    <%= f.collection_select :divesite_id, Divesite.all, :id, :name %>
+
+    <br>
+
+    <label>Date</label>
+    <%= f.date_select :date%>
+
+    <br>
+
+    <label>Time</label>
+    <%= f.time_select :time%>
+
+    <br>
+
+    <label>Water Temperature</label>
+    <%= f.number_field :water_T%>
+
+    <br>
+
+    <label>Air Temperature</label>
+    <%= f.number_field :air_T%>
+
+    <br>
+
+    <label>Depth (m)</label>
+    <%= f.number_field :depth%>
+
+    <br>
+
+    <label>Notes/Description</label>
+    <%= f.text_area :description %>
+
+    <br>
+
+    <%= f.submit %>
+<% end %>

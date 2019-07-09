@@ -1,0 +1,10 @@
+<h2>Index Page for Dives</h2>
+<%#byebug%>
+<h2><%=@user.username%>'s Dives</h2>
+
+<ul>
+    <%byebug%>
+    <% @user.dives.each do |dive| %>
+        <li>dive</li>
+    <% end %>
+</ul>

@@ -1,1 +1,6 @@
-<h2>All Dive Sites</h2>
+<h2>All Dive Shops</h2>
+<ul>
+    <% @diveshops.each do |diveshop| %>
+        <li><%= link_to diveshop.name, diveshop %></li>
+    <% end %>
+</ul>
