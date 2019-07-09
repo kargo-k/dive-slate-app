@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get '/users/:id/dives', to: 'dives#index', as: 'all_dives'
   get '/users/:id/dives/:id', to: 'dives#show', as: 'show_dive'
 
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  get    '/login',   to: 'auths#new'
+  post   '/login',   to: 'auths#create'
+  delete '/logout',  to: 'auths#destroy'
 
 end
