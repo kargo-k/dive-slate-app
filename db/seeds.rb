@@ -18,9 +18,9 @@ certifications = [
 
 # Creates 10 users using Faker data
 10.times do
-    username = Faker::Name.unique.first_name.downcase
+    username = "ScubaDifer#{(1000..9999).to_a.sample}"
     password = "0000"
-    name = username.titleize + " " + Faker::Name.last_name
+    name = Faker::Name.name
     certification = certifications.sample
     age = (12..60).to_a.sample
     country = Faker::Address.country
