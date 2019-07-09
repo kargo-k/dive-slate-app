@@ -1,11 +1,5 @@
 <h2> 🐠 Dive Slate 🐠</h2>
 
-<%=form_for @user do |f| %>
-<%=f.label :username %>
-<%=f.text_field :username %>
-<br>
-<%=f.label :password %>
-<%=f.text_field :password %>
-<br>
-<%=f.submit%>
+<% @users.each do |user|%>
+<%= link_to user.username, user %><br>
 <%end%>

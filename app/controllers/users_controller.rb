@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :user_params, only: [:create]
+  before_action :user_params, only: [:create, :update]
 
   def index
     @users = User.all
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
 
     def edit
       @user = User.find(params[:id])
@@ -27,18 +28,17 @@ class UsersController < ApplicationController
 
     def update
       @user = User.find(params[:id])
-      if @user = User.update(user_path)
+      if @user = User.update(user_params)
         redirect_to user_path(@user)
       else
         render :edit
-      end 
+      end
+    end
+
+    private
+
+    def user_params
+      params.require(:user).permit(:username, :password, :name, :certification, :age, :country, :total_dives)
     end
 
   end
-
-  private
-
-  def user_params
-    params.require(:user).permit(:username, :password, :name, :certification, :age, :country, :total_dives)
-  end
-end
