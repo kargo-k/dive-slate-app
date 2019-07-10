@@ -17,7 +17,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save && user_params[:password] == user_params[:password_confirmation]
-      redirect_to user_path(@user)
+      session[:user_id] = @user.id
+      redirect_to edit_user_path(@user)
     else
       if !@user.errors.messages[:username].empty?
         flash[:username_error] = true
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
+      byebug
       render :edit
     end
   end
