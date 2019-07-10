@@ -6,4 +6,8 @@ class DivesitesController < ApplicationController
     def index
         @divesites = Divesite.all
     end
+
+    def top_5_sites
+        
+    end
 end
