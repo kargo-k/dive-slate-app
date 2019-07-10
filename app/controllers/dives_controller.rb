@@ -2,7 +2,7 @@ class DivesController < ApplicationController
     before_action :redirect_user, only: [:new, :create, :destroy]
 
     def new
-        @user = User.find(params[:id])
+        @user = User.find(session[:user_id])
         @dive = Dive.new
     end
 

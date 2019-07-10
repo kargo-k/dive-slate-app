@@ -1,6 +1,6 @@
 
     <h2>Dive Site: </h2>
-    <%= @dive.divesite.name %>
+    <%= link_to @dive.divesite.name, divesite_path(@dive.divesite) %>
       <br>
       <br>
     <label>Dive Shop: </label>
@@ -39,11 +39,11 @@
     <br>
     <br>
 
-<%= button_to "Delete this dive", delete_dive_path(@dive), method: :delete %> <br>
+<%= link_to "Delete this dive", delete_dive_path(@dive), method: :delete %> <br>
 <br>
-<%= button_to "Show all my dives", divers_dives_path(@dive.user)%><br>
-<%= button_to "View my profile", user_path(@dive.user)%><br>
+<%= link_to "Show all my dives", divers_dives_path(@dive.user)%><br>
+<%= link_to "View my profile", user_path(@dive.user)%><br>
 <br><br>
 
-<%= button_to "Logout", logout_path, method: :delete %>
+<%= link_to "Logout", logout_path, method: :delete %>
 

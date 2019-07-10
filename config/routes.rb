@@ -3,12 +3,15 @@ Rails.application.routes.draw do
   resources :dive_marineanimals
   resources :marineanimals
   resources :dive_equipments
-  # resources :dives
   resources :equipment
   resources :users
-  resources :divesites
   resources :diveshops
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  post '/divesites/sort',       to: 'divesites#sort', as: 'sorted_divesites'
+  get '/divesites/:id',         to: 'divesites#show', as: 'divesite'
+  get '/divesites',             to: 'divesites#index'
+  # resources :divesites
 
   get '/users/new',             to: 'users#new', as: 'signup'
   get '/signup',                to: 'users#new'

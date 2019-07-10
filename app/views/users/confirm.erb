@@ -1,5 +1,5 @@
 <h4>Are you sure you want to delete your profile?</h4>
 
-<%= button_to "Yes, delete my profile. <º))))><", @user, method: :delete %>
+<%= link_to "Yes, delete my profile. <º))))><", @user, method: :delete %>
 <br><br>
-<%= button_to "Nevermind, go back!", divers_dives_path(@user) %>
+<%= link_to "Nevermind, go back!", divers_dives_path(@user) %>

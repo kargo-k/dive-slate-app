@@ -1,5 +1,5 @@
-<h2><%=@user.username%>'s Dives</h2>
-<%= button_to "Log a New Dive", dives_path%>
+<h2><%=@user.username%>'s Dive Dashboard</h2>
+<%= link_to "Log a New Dive", dives_path %>
 
 <ol>
     <% @user.dives.each do |dive| %>
@@ -9,7 +9,7 @@
     <% end %>
 </ol>
 
-<%= button_to "View my profile", user_path(@user)%>
+<%= link_to "View my profile", user_path(@user)%>
 
 
-<%= button_to "Logout", logout_path, method: :delete %>
+<%= link_to "Logout", logout_path, method: :delete %>
