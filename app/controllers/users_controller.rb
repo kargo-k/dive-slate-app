@@ -16,11 +16,17 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    byebug
-    if @user.save
+    if @user.save && user_params[:password] == user_params[:password_confirmation]
       redirect_to user_path(@user)
     else
+      if !@user.errors.messages[:username].empty?
+        flash[:username_error] = true
+      end
+      if !@user.errors.messages[:password_confirmation].empty?
+        flash[:password_error] = true
+      end
       render :new
+      flash.clear
     end
   end
 
@@ -40,13 +46,13 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.delete
-    redirect_to users_path
+    redirect_to login_path
   end
 
 
 private
 
   def user_params
-    params.require(:user).permit(:username, :password, :name, :certification, :age, :country, :total_dives)
+    params.require(:user).permit(:username, :password, :password_confirmation, :name, :certification, :age, :country, :total_dives)
   end
 end
