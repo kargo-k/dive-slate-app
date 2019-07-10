@@ -11,7 +11,7 @@ class AuthsController < ApplicationController
     else
       flash[:error] = "Hm, that doesn't look right.  Please try again."
       render :login
-      byebug
+      flash.clear
     end
   end
 
