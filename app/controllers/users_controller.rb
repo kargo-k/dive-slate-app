@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :user_params, only: [:create, :update]
-  
+  before_action :redirect_user, only: [:index, :show, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -22,10 +22,6 @@ class UsersController < ApplicationController
     else
       render :new
     end
-  end
-
-  def signup
-    @user = User.new
   end
 
   def edit
