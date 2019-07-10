@@ -46,4 +46,4 @@
 <%= link_to "Show all my dives", divers_dives_path(@dive.user)%><br>
 <%= link_to "View my profile", user_path(@dive.user)%><br>
 <br><br>
-<%= link_to "Logout", logout_path %>
+<%= link_to "Logout", logout_path, method: :delete %>
