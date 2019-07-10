@@ -1,6 +1,7 @@
 <h2><%=@marineanimal.name%>: </h2>
 <br><br>
-<%byebug%>
 <%=image_tag(@marineanimal.url)%>
 <br>
 <p><%=@marineanimal.url%></p>
+
+<%= link_to 'Back', marineanimals_path %>

@@ -32,9 +32,16 @@
     <br>
     <br>
 
-
+    <h3>Dive Equipment Used: </h3>
     <%@dive.equipment.each do |equipment|%>
-    <%=equipment.name.capitalize%>
+    <%=equipment.name.capitalize%><br>
+    <%end%>
+    <br>
+    <br>
+
+    <h3>Marine Life Seen:</h3>
+    <%@dive.marineanimals.each do |animal|%>
+    <%= link_to animal.name, marineanimal_path(animal)%><br>
     <%end%>
     <br>
     <br>
@@ -46,4 +53,3 @@
 <br><br>
 
 <%= link_to "Logout", logout_path, method: :delete %>
-

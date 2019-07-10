@@ -51,6 +51,9 @@
 
     <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name)%><br><br>
 
+    <h3>See any marine animals?</h3>
+
+    <%= f.collection_check_boxes(:marineanimal_ids, Marineanimal.all, :id, :name)%><br><br>
+
     <%= f.submit %>
-    <%# end %>
 <% end %>
