@@ -1,6 +1,5 @@
 class DiveEquipmentsController < ApplicationController
 
-
     def new
     end
 
