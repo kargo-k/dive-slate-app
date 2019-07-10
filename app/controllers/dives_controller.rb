@@ -7,9 +7,10 @@ class DivesController < ApplicationController
     end
 
     def create
+        # byebug
         @dive = Dive.new(dive_params)
         if @dive.save
-            redirect_to new_dive_equipment_path(diver: @dive.user)
+            redirect_to show_dive_path(@dive)
         else
             render :new
         end
@@ -31,10 +32,10 @@ class DivesController < ApplicationController
         redirect_to divers_dives_path(@user)
     end
 
-    private
+  private
 
-        def dive_params
-            params.require(:dive).permit(:user_id,:diveshop_id, :divesite_id, :date, :time, :water_T, :air_T, :depth, :description)
-        end
+    def dive_params
+        params.require(:dive).permit(:user_id, :diveshop_id, :divesite_id, :date, :time, :water_T, :air_T, :depth, :description, equipment_ids: [])
+    end
 
 end

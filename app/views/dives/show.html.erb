@@ -1,43 +1,42 @@
 
- <h2>Showing a Specific Dive</h2>
-    <label>Dive Shop</label>
+    <h2>Dive Site: </h2>
+    <%= @dive.divesite.name %>
+
+    <label>Dive Shop: </label>
     <%= @dive.diveshop.name %>
 
     <br>
-
-    <label>Dive Site</label>
-    <%= @dive.divesite.name %>
-
     <br>
 
-    <label>Date</label>
+    <label>Date: </label>
     <%= @dive.date %>
-
     <br>
 
-    <label>Time</label>
+    <label>Time: </label>
     <%= @dive.time%>
-
     <br>
 
-    <label>Water Temperature</label>
+    <label>Water Temperature: </label>
     <%= @dive.water_T%>
-
     <br>
 
-    <label>Air Temperature</label>
+    <label>Air Temperature: </label>
     <%= @dive.air_T%>
-
     <br>
 
-    <label>Depth (m)</label>
+    <label>Depth (m): </label>
     <%= @dive.depth%>
-
     <br>
 
-    <label>Notes/Description</label>
+    <label>Notes/Description: </label>
     <%= @dive.description %>
+    <br>
+    <br>
 
+
+    <%@dive.equipment.each do |equipment|%>
+    <%=equipment.name.capitalize%>
+    <%end%>
     <br>
     <br>
 
@@ -46,4 +45,6 @@
 <%= link_to "Show all my dives", divers_dives_path(@dive.user)%><br>
 <%= link_to "View my profile", user_path(@dive.user)%><br>
 <br><br>
+
 <%= link_to "Logout", logout_path, method: :delete %>
+
