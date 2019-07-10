@@ -7,9 +7,10 @@ class DivesController < ApplicationController
     end
 
     def create
-        # byebug
         @dive = Dive.new(dive_params)
+        @dive.user.total_dives += 1
         if @dive.save
+            @dive.user.save
             redirect_to show_dive_path(@dive)
         else
             render :new
