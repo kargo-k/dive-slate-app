@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_action :user_params, only: [:create, :update]
-  before_action :redirect_user, only: [:index, :show, :edit, :update, :destroy]
+  before_action :redirect_user, only: [:index, :show, :edit, :update, :destroy, :confirm]
 
   def index
-    user = User.find(session[:user_id])
-    if user.username == "karen" || user.username == "danie"
+    @user = this_user
+    if @user.username == "karen" || @user.username == "danie"
       @users = User.all
     else
       redirect_to user_path(user)
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = this_user
   end
 
   def new
@@ -37,11 +37,15 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = this_user
+  end
+
+  def confirm
+    @user = this_user
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = this_user
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
@@ -51,8 +55,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
+    @user = this_user
     @user.delete
+    session.clear
     redirect_to login_path
   end
 
@@ -62,4 +67,9 @@ private
   def user_params
     params.require(:user).permit(:username, :password, :password_confirmation, :name, :certification, :age, :country, :total_dives)
   end
+
+  def this_user
+    User.find(session[:user_id])
+  end
+
 end

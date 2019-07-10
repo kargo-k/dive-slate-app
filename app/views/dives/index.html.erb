@@ -1,5 +1,5 @@
-<h2><%=@user.username%>'s Dives</h2>
-<%= link_to "Log a New Dive", dives_path%>
+<h2><%=@user.username%>'s Dive Dashboard</h2>
+<%= link_to "Log a New Dive", dives_path %>
 
 <ol>
     <% @user.dives.each do |dive| %>

@@ -1,6 +1,6 @@
 
     <h2>Dive Site: </h2>
-    <%= @dive.divesite.name %>
+    <%= link_to @dive.divesite.name, divesite_path(@dive.divesite) %>
       <br>
       <br>
     <label>Dive Shop: </label>
