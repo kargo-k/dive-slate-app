@@ -1,6 +1,10 @@
 class AuthsController < ApplicationController
 
   def login
+    if session[:user_id] != nil
+      user = User.find(session[:user_id])
+      redirect_to divers_dives_path(user)
+    end
   end
 
   def create
