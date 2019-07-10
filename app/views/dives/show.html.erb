@@ -1,11 +1,10 @@
 
     <h2>Dive Site: </h2>
     <%= @dive.divesite.name %>
-
+      <br>
+      <br>
     <label>Dive Shop: </label>
-    <%= @dive.diveshop.name %>
-
-    <br>
+    <%= link_to @dive.diveshop.name, diveshop_path(@dive.diveshop) %>
     <br>
 
     <label>Date: </label>
