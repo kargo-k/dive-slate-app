@@ -34,12 +34,12 @@ usernames = [
     country = Faker::Address.country
     total_dives = (1..200).to_a.sample
     User.create(
-        username: username,
-        password: password,
-        name: name,
-        certification: certification,
-        age: age,
-        country: country,
+        username: username, 
+        password_digest: password, 
+        name: name, 
+        certification: certification, 
+        age: age, 
+        country: country, 
         total_dives: total_dives
         )
 end
@@ -53,7 +53,7 @@ Equipment.create(name: "fins")
 Equipment.create(name: "gloves - 2 mm")
 Equipment.create(name: "hood - 2 mm")
 Equipment.create(name: "rashguard - 1 mm")
-Equipment.create(name: "drysuit - ")
+Equipment.create(name: "drysuit")
 Equipment.create(name: "weights - 2 kg")
 Equipment.create(name: "weights - 4 kg")
 Equipment.create(name: "weights - 6 kg")

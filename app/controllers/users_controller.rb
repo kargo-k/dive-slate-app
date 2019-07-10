@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :user_params, only: [:create, :update]
+  
 
   def index
     @users = User.all
@@ -15,11 +16,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    byebug
     if @user.save
       redirect_to user_path(@user)
     else
       render :new
     end
+  end
+
+  def signup
+    @user = User.new
   end
 
   def edit
