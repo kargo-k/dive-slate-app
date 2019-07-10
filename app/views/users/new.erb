@@ -1,3 +1,33 @@
 <h2>🐠 Complete Your Profile 🐠</h2>
 
-<%= render 'form' %>
+<%= form_for @user do |f| %>
+
+    <%= f.label "Select your Username:" %>
+    <%= f.text_field :username %> 
+    
+    <br><br>
+
+    <%= f.label "Choose your Password:" %>
+    <%= f.password_field :password %>
+        
+    <br><br>
+
+    <%= f.label "Confirm your Password:" %>
+    <%= f.password_field :password_confirmation %>
+
+    <br><br>
+
+    <%= f.submit %>
+
+<% end %>
+
+<div class="error" style="color:red">
+    <ul>
+        <% if flash[:username_error] %>
+            <li>Username already exists!</li>
+        <% end %>
+        <% if flash[:password_error] %>
+            <li>Passwords do not match!</li>
+        <% end %>
+    </ul>
+</div>

@@ -1,4 +1,5 @@
 class DivesController < ApplicationController
+    before_action :redirect_user, only: [:new, :create, :destroy]
 
     def new
         @user = User.find(params[:id])
@@ -23,6 +24,7 @@ class DivesController < ApplicationController
     end
 
     def destroy
+        @dive = Dive.find(params[:id])
         @user = @dive.user
         @dive = Dive.find(params[:id])
         @dive.delete
