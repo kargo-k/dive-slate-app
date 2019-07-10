@@ -1,7 +1,13 @@
 <%= form_for @user do |f| %>
   Username: <%= f.text_field :username %><br>
   Name: <%= f.text_field :name %><br>
-  Highest Certification: <%= f.text_field :certification %><br>
+  Highest Certification: <%= f.select :certification, [
+    "OPEN WATER",
+    "ADVANCED OPEN WATER",
+    "NITROX",
+    "RESCUE",
+    "DIVE MASTER",
+    "DIVE INSTRUCTOR"] %><br>
   Age: <%= f.number_field :age %><br>
   Country: <%= f.text_field :country %><br>
   Total Dives: <%= f.number_field :total_dives %><br>
