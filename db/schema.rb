@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_235420) do
+ActiveRecord::Schema.define(version: 2019_07_10_182713) do
 
   create_table "dive_equipments", force: :cascade do |t|
     t.integer "dive_id"
     t.integer "equipment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dive_marineanimals", force: :cascade do |t|
+    t.integer "dive_id"
+    t.integer "marineanimal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,6 +58,13 @@ ActiveRecord::Schema.define(version: 2019_07_09_235420) do
 
   create_table "equipment", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "marineanimals", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

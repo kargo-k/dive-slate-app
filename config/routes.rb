@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :dive_marineanimals
+  resources :marineanimals
   root 'auths#login'
   resources :dive_equipments
   # resources :dives
