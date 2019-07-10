@@ -3,7 +3,12 @@ class UsersController < ApplicationController
   before_action :redirect_user, only: [:index, :show, :edit, :update, :destroy]
 
   def index
-    @users = User.all
+    user = User.find(session[:user_id])
+    if user.username == "karen" || user.username == "danie"
+      @users = User.all
+    else
+      redirect_to user_path(user)
+    end
   end
 
   def show
