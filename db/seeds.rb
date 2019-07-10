@@ -34,12 +34,12 @@ usernames = [
     country = Faker::Address.country
     total_dives = (1..200).to_a.sample
     User.create(
-        username: username, 
-        password: password, 
-        name: name, 
-        certification: certification, 
-        age: age, 
-        country: country, 
+        username: username,
+        password: password,
+        name: name,
+        certification: certification,
+        age: age,
+        country: country,
         total_dives: total_dives
         )
 end

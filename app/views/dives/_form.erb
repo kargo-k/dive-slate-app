@@ -47,5 +47,11 @@
 
     <br><br>
 
+    <h3>Select Equipment Used</h3>
+
+    <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name)%><br><br>
+
+
     <%= f.submit %>
+    <%# end %>
 <% end %>

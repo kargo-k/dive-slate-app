@@ -1,5 +1,5 @@
 class DivesController < ApplicationController
-    
+
     def new
         @user = User.find(params[:id])
         @dive = Dive.new
@@ -8,7 +8,7 @@ class DivesController < ApplicationController
     def create
         @dive = Dive.new(dive_params)
         if @dive.save
-            redirect_to divers_dives_path(@dive.user)
+            redirect_to new_dive_equipment_path(diver: @dive.user)
         else
             render :new
         end
@@ -28,7 +28,7 @@ class DivesController < ApplicationController
         @dive.delete
         redirect_to divers_dives_path(@user)
     end
-    
+
     private
 
         def dive_params

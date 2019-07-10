@@ -9,6 +9,7 @@
 <h4>Total Dives: </h4>
 <h5><%=@user.total_dives%></h5>
 
-<%=link_to "Home", users_path %> <br>
-<%=link_to "Edit", edit_user_path(@user) %> <br>
-<%= link_to "Show all my dives", divers_dives_path(@user)%>
+<%=link_to "Home", users_path%> <br>
+<%=link_to "Edit", edit_user_path(@user)%> <br>
+<%= link_to "Show all my dives", divers_dives_path(@user)%><br><br>
+<%=link_to "Delete User <º))))><", @user, method: :delete %>
