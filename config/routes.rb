@@ -1,18 +1,28 @@
 Rails.application.routes.draw do
 
   resources :dive_equipments
-  resources :dives
+  # resources :dives
   resources :equipment
   resources :users
   resources :divesites
   resources :diveshops
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get '/users/:id/dives', to: 'dives#index', as: 'all_dives'
-  get '/users/:id/dives/:id', to: 'dives#show', as: 'show_dive'
+  get '/users/:id/dives/new', to: 'dives#new', as: 'dives'
 
-  get    '/login',   to: 'auths#new'
+  get '/users/:id/dives/', to: 'dives#index', as: 'divers_dives'
+  
+  post '/users/:id/dives/:id/', to: 'dives#create'
+  
+  get '/dives/:id/', to: 'dives#show', as: 'show_dive'
+
+  delete '/dives/:id/', to: 'dives#destroy', as: 'delete_dive'
+
+  get    '/login',   to: 'auths#login'
   post   '/login',   to: 'auths#create'
-  delete '/logout',  to: 'auths#destroy'
+  delete '/login',  to: 'auths#destroy', as: 'logout'
+
+  get '/signup', to: 'users#signup'
+  post '/signup', to: 'users#createaccount'
 
 end

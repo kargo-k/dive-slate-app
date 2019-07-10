@@ -1,6 +1,7 @@
 # Ignores folders
 tmp
 log
+tmp/cache
 
 # Ignore db
 *.sqlite3
@@ -10,4 +11,4 @@ log
 *.log
 *.iml
 *.swp
-*.byebug_history
+.byebug_history

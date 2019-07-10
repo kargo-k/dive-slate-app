@@ -1,8 +1,19 @@
-<%=form_for(:auth, url: login_path) do |f| %>
-<%=f.label username%>
-<%=f.text_field username%>
-<%=f.label password%>
-<%=f.text_field password%>
+<h2>Welcome! Please Log In</h2>
 
-<%=f.submit%>
+<%=form_for(:auth, url: login_path) do |f| %>
+    <%=f.label :username %>
+    <%=f.text_field :username %>
+
+    <br> 
+
+    <%=f.label :password %>
+    <%=f.password_field :password %>
+
+    <br><br>
+
+    <%=f.submit%>
 <%end%>
+
+<br><br>
+
+<%= link_to "New User? Sign up here!", signup_path %>

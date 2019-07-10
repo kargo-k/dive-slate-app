@@ -1,10 +1,12 @@
-<h2>Index Page for Dives</h2>
-<%#byebug%>
 <h2><%=@user.username%>'s Dives</h2>
+<%= link_to "Log a New Dive", dives_path%>
 
-<ul>
-    <%byebug%>
+<ol>
     <% @user.dives.each do |dive| %>
-        <li>dive</li>
+        <li><b><%= link_to dive.divesite.name, show_dive_path(dive) %>: </b>
+            <%=dive.description%>
+        </li>
     <% end %>
-</ul>
+</ol>
+
+<%= link_to "View my profile", user_path(@user)%>
