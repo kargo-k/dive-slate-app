@@ -1,6 +1,10 @@
 class AuthsController < ApplicationController
 
   def login
+    if session[:user_id] != nil
+      user = User.find(session[:user_id])
+      redirect_to divers_dives_path(user)
+    end
   end
 
   def create
@@ -11,7 +15,7 @@ class AuthsController < ApplicationController
     else
       flash[:error] = "Hm, that doesn't look right.  Please try again."
       render :login
-      byebug
+      flash.clear
     end
   end
 
