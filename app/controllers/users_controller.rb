@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def new
@@ -37,11 +37,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def confirm
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def update
@@ -55,8 +55,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
     @user.delete
+    session.clear
     redirect_to login_path
   end
 
