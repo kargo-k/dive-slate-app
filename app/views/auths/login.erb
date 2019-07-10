@@ -11,9 +11,17 @@
 
     <br><br>
 
-    <%=f.submit%>
+    <%=f.submit "Login"%>
 <%end%>
 
 <br><br>
+
+<div class="error" style="color:red">
+<% if flash[:error] %>
+    <%= flash[:error] %>
+<% end %>
+</div>
+
+<br><br><br><br>
 
 <%= link_to "New User? Sign up here!", signup_path %>
