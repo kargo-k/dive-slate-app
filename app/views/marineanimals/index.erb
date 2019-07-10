@@ -1,0 +1,8 @@
+<h2>Marine Animals!</h2>
+
+<ol>
+    <% @marineanimals.each do |animal| %>
+        <ul><b><%= link_to animal.name, marineanimal_path(animal) %></b>
+        </ul>
+    <% end %>
+</ol>

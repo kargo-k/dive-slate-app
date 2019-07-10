@@ -34,12 +34,12 @@ usernames = [
     country = Faker::Address.country
     total_dives = (1..200).to_a.sample
     User.create(
-        username: username, 
-        password_digest: password, 
-        name: name, 
-        certification: certification, 
-        age: age, 
-        country: country, 
+        username: username,
+        password_digest: password,
+        name: name,
+        certification: certification,
+        age: age,
+        country: country,
         total_dives: total_dives
         )
 end
@@ -118,3 +118,9 @@ shops.each do |shop|
     address = Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.country
     Diveshop.create(name: name, address: address)
 end
+
+Marineanimal.create(name: 'Parrot Fish', url:'https://upload.wikimedia.org/wikipedia/commons/f/f2/Scarus_frenatus_by_Ewa_Barska.jpg')
+Marineanimal.create(name: 'Giant Pacific Octopus', url:'http://www.animalspot.net/wp-content/uploads/2018/02/Giant-Pacific-Octopus.jpg')
+Marineanimal.create(name: 'Flamboyant Cuttlefish', url:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flamboyant_Cuttlefish-2.jpg/2560px-Flamboyant_Cuttlefish-2.jpg')
+Marineanimal.create(name: 'Whale Shark', url:'https://www.phnompenhpost.com/sites/default/files/styles/full-screen/public/field/image/fish_1.jpg?itok=eIMY5vq-')
+Marineanimal.create(name: 'Hammerhead Shark', url:'https://www.hakaimagazine.com/wp-content/uploads/aaid_header.jpg')
