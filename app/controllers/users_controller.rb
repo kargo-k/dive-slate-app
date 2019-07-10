@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :user_params, only: [:create, :update]
-  before_action :redirect_user, only: [:index, :show, :edit, :update, :destroy]
+  before_action :redirect_user, only: [:index, :show, :edit, :update, :destroy, :confirm]
 
   def index
     user = User.find(session[:user_id])
@@ -37,6 +37,10 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
+  end
+
+  def confirm
     @user = User.find(params[:id])
   end
 

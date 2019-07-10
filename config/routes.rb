@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  root 'auths#login'
   resources :dive_marineanimals
   resources :marineanimals
-  root 'auths#login'
   resources :dive_equipments
   # resources :dives
   resources :equipment
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/signup',                to: 'users#new'
   post '/signup',               to: 'users#create'
   get '/users',                 to: 'users#index', as: 'all_users'
+  get '/users/:id/delete',      to: 'users#confirm', as: 'confirm_delete'
 
   get '/users/:id/dives/new',   to: 'dives#new', as: 'dives'
   get '/users/:id/dives/',      to: 'dives#index', as: 'divers_dives'
