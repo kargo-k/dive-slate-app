@@ -1,5 +1,34 @@
-<h2>🐠 Update Your Profile 🐠</h2>
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
 
-<%= render 'form' %>
+    <body>
+        <!-- top-bar start -->
+        <div id="header">
+            <strong>Dive Slate</strong>
+        </div>
 
-<%= link_to "Go to My Dives Dashboard", divers_dives_path(@user) %>
+        <div id="topbarmenu">
+            <%= link_to "Home", divers_dives_path(@user) %>
+            <%= link_to @user.username, user_path(@user) %>
+            <%= link_to "Logout", logout_path, method: :delete %>
+        </div>
+        <!-- top-bar end -->
+
+        <div id="main">
+            <h2>🐠 Update Your Profile 🐠</h2>
+
+            <div class="form">
+                <%= render 'form' %>
+            </div>
+
+            <div class="button">
+                <%=link_to "Delete My Profile <º))))><", confirm_delete_path %>
+            </div>
+            
+        </div>
+    </body>
+</html>

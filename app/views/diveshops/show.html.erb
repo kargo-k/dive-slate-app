@@ -1,8 +1,27 @@
-<h2><%= @diveshop.name %></h2>
-<h4>Address: <%= @diveshop.address %>
-<br>
-<br>
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
 
+    <body>
+        <!-- top-bar start -->
+        <div id="header">
+            <strong>Dive Slate</strong>
+        </div>
 
-<%=link_to "Home", login_path%> <br>
-<%= link_to "Logout", logout_path, method: :delete %>
+        <div id="topbarmenu">
+            <%= link_to "Go to My Dives Dashboard", divers_dives_path(@user) %>
+            <%= link_to @user.username, user_path(@user) %>
+            <%= link_to "Logout", logout_path, method: :delete %>
+        </div>
+        <!-- top-bar end -->
+
+        <!-- main area start -->
+        <div id="main">
+            <h2><%= @diveshop.name %></h2>
+            <h4>Address: <%= @diveshop.address %></h4>
+        </div>
+    </body>
+</html>

@@ -23,6 +23,8 @@ class DivesController < ApplicationController
 
     def index
         @user = this_user
+        @top_divers = User.all.sort_by {|user| -user.total_dives}
+        @top_divesites = Divesite.all.sort_by {|site| -site.dives.count}
     end
 
     def destroy

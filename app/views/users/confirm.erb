@@ -1,5 +1,30 @@
-<h4>Are you sure you want to delete your profile?</h4>
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
 
-<%= link_to "Yes, delete my profile. <º))))><", @user, method: :delete %>
-<br><br>
-<%= link_to "Nevermind, go back!", divers_dives_path(@user) %>
+    <body>
+        <!-- top-bar start -->
+        <div id="header">
+            <strong>Dive Slate</strong>
+        </div>
+
+        <div id="menu">
+            <%= link_to @user.username, user_path(@user) %>
+            <%= link_to "Logout", logout_path, method: :delete %>
+        </div>
+        <!-- top-bar end -->
+
+        <div id="main">
+            <h4>Are you sure you want to delete your profile?</h4>
+
+            <div class="form">
+                <%= link_to "Yes, delete my profile. <º))))><", @user, method: :delete %>
+                <br><br>
+                <%= link_to "Nevermind, go back!", divers_dives_path(@user) %>
+            </div>
+        </div>
+    </body>
+</html>
