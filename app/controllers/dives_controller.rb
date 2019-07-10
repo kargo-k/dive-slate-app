@@ -1,8 +1,8 @@
 class DivesController < ApplicationController
-    before_action :redirect_user, only: [:new, :create, :destroy]
+    before_action :redirect_user, only: [:new, :create, :destroy, :index]
 
     def new
-        @user = User.find(session[:user_id])
+        @user = this_user
         @dive = Dive.new
     end
 
@@ -18,17 +18,16 @@ class DivesController < ApplicationController
     end
 
     def show
-        @dive = Dive.find(params[:id])
+        @dive = this_dive
     end
 
     def index
-        @user = User.find(params[:id])
+        @user = this_user
     end
 
     def destroy
-        @dive = Dive.find(params[:id])
+        @dive = this_dive
         @user = @dive.user
-        @dive = Dive.find(params[:id])
         @dive.delete
         redirect_to divers_dives_path(@user)
     end
@@ -37,6 +36,14 @@ class DivesController < ApplicationController
 
     def dive_params
         params.require(:dive).permit(:user_id, :diveshop_id, :divesite_id, :date, :time, :water_T, :air_T, :depth, :description, equipment_ids: [])
+    end
+
+    def this_user
+        User.find(session[:user_id])
+    end
+
+    def this_dive
+        Dive.find(params[:id])
     end
 
 end
