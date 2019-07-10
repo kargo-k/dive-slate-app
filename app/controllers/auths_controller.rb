@@ -9,7 +9,8 @@ class AuthsController < ApplicationController
       session[:user_id] = user.id
       redirect_to divers_dives_path(user)
     else
-      render :new
+      render :login
+      byebug
     end
   end
 
