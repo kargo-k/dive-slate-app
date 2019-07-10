@@ -1,8 +1,9 @@
 <%= form_for @dive do |f| %>
-    <label>Username</label>
+    <%# <label>Username</label>
     <%= f.collection_select :user_id, User.all, :id, :username %>
+    <%# <br> %>
 
-    <br>
+    <%= hidden_field_tag "dive[user_id]", "#{@user.id}" %>
 
     <label>Dive Shop</label>
     <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name %>
@@ -24,6 +25,8 @@
 
     <br>
 
+    <h3>Technical Specs</h3>
+
     <label>Water Temperature</label>
     <%= f.number_field :water_T%>
 
@@ -42,7 +45,13 @@
     <label>Notes/Description</label>
     <%= f.text_area :description %>
 
-    <br>
+    <br><br>
+
+    <h3>Select Equipment Used</h3>
+
+    <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name)%><br><br>
+
 
     <%= f.submit %>
+    <%# end %>
 <% end %>
