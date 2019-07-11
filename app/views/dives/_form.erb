@@ -15,8 +15,7 @@
     <br>
 
     <label>Date</label>
-    <%= f.text_field :check_in_date%>
-
+    <%= f.date_select :date, order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 0, end_year: Date.today.year - 100 %>
     <br>
 
     <label>Time</label>

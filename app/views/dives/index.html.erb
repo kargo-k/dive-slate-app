@@ -15,6 +15,7 @@
             <%= link_to "Go to My Dives Dashboard", divers_dives_path(@user) %>
             <%= link_to @user.username, user_path(@user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
+
         </div>
         <!-- top-bar end -->
 
@@ -51,6 +52,10 @@
                     <% for i in 0..4 %>
                         <li><%= @top_divers[i].username %> with <%=@top_divers[i].total_dives%> Dives</li>
                     <% end %>
+                </div>
+
+                <div id="marineanimals">
+                    <h4><%= link_to "See Marine Life", marineanimals_path%></h4>
                 </div>
         </div>
     </body>
