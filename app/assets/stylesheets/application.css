@@ -1,7 +1,7 @@
 /* Color Scheme
 #E8B9BF (spanish pink)
 #91EACE (pale robin egg blue)
-#5398A8 (rackley)
+#5398A8 (rackley, dark teal)
 #4EADE5 (picton blue)
 #9D9BDC (blue bell)
  */
@@ -17,10 +17,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
 
 html, body {
-font-family: 'Roboto', sans-serif;
-background-image: url('https://images.unsplash.com/photo-1530054127536-9a5f8998505d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1678&q=80');
-color: #FFFF;
-
+  font-family: 'Roboto', sans-serif;
+  background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: #FFFF;
+  text-align: center;
 }
 
 .content {
@@ -90,15 +93,27 @@ grid-column: 6/13;
 #topdivers {
 
 }
-
-/* Form Styling */
-.form {
-
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 32pt;
+  text-decoration-line: underline
 }
 
-/* Signup link on login page */
-#signup {
-
+.inputfield{
+  color: #000;
+  font-size: 12pt;
+  padding: 0.5em 0.5em;
+}
+/* login page */
+#login {
+  background:rgba(0, 0, 0, .4);
+  text-align: center;
+  padding: 0em 4em 2.5em 4em;
+  display: inline-block;
+  color: #fff;
+  font-weight: bolder;
+  margin-top: 4em;
 }
 
 /* Error Mesages for Invalid Login/Signups */
@@ -108,7 +123,12 @@ grid-column: 6/13;
 
 /* button/links */
 .button {
-
+  background-color: #E8B9BF;
+  color: #5398A8;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  font-size: 12pt;
+  text-decoration-line: none;
 }
 
 img {
