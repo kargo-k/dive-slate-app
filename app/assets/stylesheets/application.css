@@ -1,22 +1,37 @@
+/* Color Scheme
+#E8B9BF (spanish pink)
+#91EACE (pale robin egg blue)
+#5398A8 (rackley)
+#4EADE5 (picton blue)
+#9D9BDC (blue bell)
+ */
 
-/* #page-container {
+ /* #page-container {
    width: 760px;
    margin: auto;
    background: #4EADE5;
  }
+*/
+
+/* importing fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
 
  html, body {
-   margin: 0;
-   padding: 0;
- } */
-
-body {
+  margin: 0;
+  padding: 0;
   /* background: #5398A8; */
+  font-family: 'Roboto', sans-serif;
 }
 
 /* This is the menu bar at the top of every page with the username and login/logout */
-#topbarmenu {
+#header {
+  background: #9D9BDC;
+  font-family: 'Roboto Slab', serif;
+  font-size: 16pt;
+}
 
+#topbarmenu {
+  background: #91EACE;
 }
 
 /* Displays on the user's dive dashboard -- shows the total number of dives and a button to create a new dive log */
@@ -58,4 +73,9 @@ body {
 /* button/links */
 .button {
 
+}
+
+img {
+  height: 200px;
+  width: 300px;
 }
