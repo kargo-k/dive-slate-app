@@ -1,4 +1,6 @@
 class DivesitesController < ApplicationController
+    before_action :redirect_user
+    
     def show
         @user = User.find(session[:user_id])
         @divesite = Divesite.find(params[:id])

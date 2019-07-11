@@ -1,4 +1,5 @@
 class DiveEquipmentsController < ApplicationController
+  before_action :redirect_user
 
     def new
     end

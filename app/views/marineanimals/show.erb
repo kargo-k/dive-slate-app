@@ -1,7 +1,31 @@
-<h2><%=@marineanimal.name%>: </h2>
-<br><br>
-<%=image_tag(@marineanimal.url)%>
-<br>
-<p><%=@marineanimal.url%></p>
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
 
-<%= link_to 'Back', marineanimals_path %>
+    <body>
+        <!-- top-bar start -->
+        <div id="header">
+            <strong>Dive Slate</strong>
+        </div>
+
+        <div id="menu">
+            <%= link_to "Dashboard", divers_dives_path(@user) %>
+            <%= link_to @user.username, user_path(@user) %>
+            <%= link_to "Logout", logout_path, method: :delete %>
+        </div>
+        <!-- top-bar end -->
+
+        <div id="main">
+            <h2><%=@marineanimal.name%>: </h2>
+            <br><br>
+            <img class="photo" src="<%=@marineanimal.url%>">
+
+            <div class="button">
+                <%= link_to 'Back', marineanimals_path %>
+            </div>
+        </div>
+    </body>
+</html>

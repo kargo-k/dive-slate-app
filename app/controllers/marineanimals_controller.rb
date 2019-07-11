@@ -1,4 +1,6 @@
 class MarineanimalsController < ApplicationController
+  before_action :redirect_user
+  before_action :set_user
 
   def index
     @marineanimals = Marineanimal.all
@@ -17,4 +19,11 @@ class MarineanimalsController < ApplicationController
     @marineanimal.save
     redirect_to marineanimal_path(@marineanimal)
   end
+
+  private
+
+  def set_user
+    @user = User.find(session[:user_id])
+  end
+
 end

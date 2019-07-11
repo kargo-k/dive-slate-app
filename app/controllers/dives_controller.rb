@@ -1,5 +1,5 @@
 class DivesController < ApplicationController
-    before_action :redirect_user, only: [:new, :create, :destroy, :index]
+    before_action :redirect_user
 
     def new
         @user = this_user
