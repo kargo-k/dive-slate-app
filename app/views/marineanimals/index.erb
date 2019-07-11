@@ -11,7 +11,7 @@
             <strong>Dive Slate</strong>
         </div>
 
-        <div id="menu">
+        <div id="topbarmenu">
             <%= link_to "Dashboard", divers_dives_path(@user) %>
             <%= link_to @user.username, user_path(@user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
@@ -21,12 +21,12 @@
         <div id="main">
             <h2>Marine Animals!</h2>
 
-            <ol>
+            <ul>
                 <% @marineanimals.each do |animal| %>
-                    <ul><b><%= link_to animal.name, marineanimal_path(animal) %></b>
-                    </ul>
+                    <li><b><%= link_to animal.name, marineanimal_path(animal) %></b>
+                    </li>
                 <% end %>
-            </ol>
+            </ul>
 
             <div class="button"><%= link_to "Add New Animal", new_marineanimal_path%></div>
         </div>
