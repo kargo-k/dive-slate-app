@@ -12,7 +12,7 @@
         </div>
 
         <div id="topbarmenu">
-            <%= link_to "Dashboard", divers_dives_path(@user) %>
+            <%= link_to "Dashboard", dives_path %>
             <%= link_to @user.username, user_path(@user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
         </div>
@@ -24,7 +24,7 @@
             <div class="form">
                 <%= link_to "Yes, delete my profile. <º))))><", @user, method: :delete %>
                 <br><br>
-                <%= link_to "Nevermind, go back!", divers_dives_path(@user) %>
+                <%= link_to "Nevermind, go back!", dives_path %>
             </div>
         </div>
     </body>

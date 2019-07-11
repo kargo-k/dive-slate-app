@@ -12,7 +12,7 @@ class DivesitesController < ApplicationController
 
     def sort
         @divesites = Divesite.all.sort_by {|site| -site.dives.count}
-        render :index        
+        render :index
     end
 
     private
