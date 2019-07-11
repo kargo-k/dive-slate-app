@@ -5,37 +5,22 @@
         <title>Dive Slate 🐠</title>
     </head>
     <body>
+            <div id="login" class="form">
+            <h1>Dive Slate</h1>
+            <%=form_for(:auth, url: login_path) do |f| %>
+                    <p><%=f.label :username %>
+                    <%=f.text_field :username, class: 'inputfield'%></p>
 
-        <h2>Dive Slate</h2>
-
-            <div class="form">
-                <%=form_for(:auth, url: login_path) do |f| %>
-                    <%=f.label :username %>
-                    <%=f.text_field :username %>
-
-                    <br> 
-
-                <%=f.label :password %>
-                <%=f.password_field :password %>
-
-                    <br><br>
-
-                <%=f.submit "Login"%>
-                <%end%>
-            </div>
-
-        <br><br>
-
+                <p><%=f.label :password %>
+                <%=f.password_field :password, class: 'inputfield' %></p>
+            <%=f.submit "Login", {:class => "button"}%>
+            <%end%>
+            <%= link_to "New User? Sign up here!", signup_path, {:class => "button"} %>
+            </div> 
         <div class="error" style="color:red">
         <% if flash[:error] %>
             <%= flash[:error] %>
         <% end %>
-        </div>
-
-        <br><br><br><br>
-
-        <div id="signup">
-            <%= link_to "New User? Sign up here!", signup_path %>
         </div>
     </body>
 </html>
