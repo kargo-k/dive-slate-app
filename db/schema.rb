@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_11_182357) do
+ActiveRecord::Schema.define(version: 2019_07_11_194021) do
 
   create_table "dive_equipments", force: :cascade do |t|
     t.integer "dive_id"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_07_11_182357) do
     t.integer "user_id"
     t.integer "diveshop_id"
     t.integer "divesite_id"
-    t.datetime "date"
+    t.datetime "date", default: "-4712-01-01 00:00:00"
     t.integer "water_T"
     t.integer "air_T"
     t.integer "depth"

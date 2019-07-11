@@ -124,3 +124,11 @@ Marineanimal.create(name: 'Giant Pacific Octopus', url:'http://www.animalspot.ne
 Marineanimal.create(name: 'Flamboyant Cuttlefish', url:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flamboyant_Cuttlefish-2.jpg/2560px-Flamboyant_Cuttlefish-2.jpg')
 Marineanimal.create(name: 'Whale Shark', url:'https://www.phnompenhpost.com/sites/default/files/styles/full-screen/public/field/image/fish_1.jpg?itok=eIMY5vq-')
 Marineanimal.create(name: 'Hammerhead Shark', url:'https://www.hakaimagazine.com/wp-content/uploads/aaid_header.jpg')
+
+25.times do 
+    Dive.create(
+        user_id: (1..10).to_a.sample,
+        diveshop_id: (1..5).to_a.sample,
+        divesite_id: (1..7).to_a.sample,
+        )
+end

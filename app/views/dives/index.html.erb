@@ -27,9 +27,10 @@
         <!-- main area start, shows current user's dives -->
         <div id="main">
             <ul>
-                <% @user.dives.each do |dive| %>
+                <% @dives.each do |dive| %>
                     <li>
-                        <b><%= link_to dive.divesite.name, dive_path(dive) %>: </b><%=dive.description%>
+                        <b><%= link_to dive.divesite.name, dive_path(dive) %></b>
+                        <p><%=dive.description %></p>
                     </li>
                 <% end %>
             </ul>
