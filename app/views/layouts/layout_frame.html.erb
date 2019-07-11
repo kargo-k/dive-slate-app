@@ -12,7 +12,7 @@
         </div>
 
         <div id="topbarmenu">
-            <%= link_to "Dashboard", divers_dives_path(@user) %>
+            <%= link_to "Dashboard", dives_path %>
             <%= link_to @user.username, user_path(@user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
         </div>
@@ -29,7 +29,7 @@
             <ul>
                 <% @user.dives.each do |dive| %>
                     <li>
-                        <b><%= link_to dive.divesite.name, show_dive_path(dive) %>: </b><%=dive.description%>
+                        <b><%= link_to dive.divesite.name, dive_path(dive) %>: </b><%=dive.description%>
                     </li>
                 <% end %>
             </ul>

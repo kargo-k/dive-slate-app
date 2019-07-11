@@ -12,7 +12,7 @@
         </div>
 
         <div id="topbarmenu">
-            <%= link_to "Dashboard", divers_dives_path(@dive.user) %>
+            <%= link_to "Dashboard", dives_path %>
             <%= link_to @dive.user.username, user_path(@dive.user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
         </div>
@@ -52,21 +52,27 @@
           <br>
           
           <h3>Dive Equipment Used</h3>
-
-          <%@dive.equipment.each do |equipment|%>
-          <%=equipment.name.capitalize%>
-          <%end%>
-
-            <BR><BR>
+          <ul>
+            <% @dive.equipment.each do |equipment| %>
+              <li><%= equipment.name.capitalize %></li>
+            <% end %>
+          </ul>
 
             <h3>Marine Life Seen:</h3>
-            <%@dive.marineanimals.each do |animal|%>
-            <%= link_to animal.name, marineanimal_path(animal)%><br>
-            <% end %>
+            <ul>
+                <%@dive.marineanimals.each do |animal|%>
+                  <li><%= link_to animal.name, marineanimal_path(animal)%></li>
+                <% end %>
+            </ul>
 
           <div class="button">
-              <%= link_to "Delete this dive", delete_dive_path(@dive), method: :delete %> <br>
-        <%= link_to "Show all my dives", divers_dives_path(@dive.user)%><br>
+              <%= link_to "Edit Dive", edit_dive_path(@dive) %> <br>
+          </div>
+          <div class="button">
+              <%= link_to "Delete Dive", delete_dive_path(@dive), method: :delete %> <br>
+          </div>
+          <div class="button">
+              <%= link_to "Show all my dives", dives_path%><br>
           </div>
     </div>
   </body>

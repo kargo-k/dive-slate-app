@@ -1,8 +1,7 @@
 class DivesController < ApplicationController
     before_action :redirect_user
-    before_action :set_user, only: [:new, :show, :index, :create]
-    before_action :set_dive, only: [:show, :destroy]
-    
+    before_action :set_user, only: [:new, :show, :index, :create, :edit, :update]
+    before_action :set_dive, only: [:show, :destroy, :edit, :update]
 
     def new
         @dive = Dive.new
@@ -13,7 +12,19 @@ class DivesController < ApplicationController
         @dive.user.total_dives += 1
         if @dive.save
             @dive.user.save
-            redirect_to show_dive_path(@dive)
+            redirect_to @dive
+        else
+            render :new
+        end
+    end
+
+    def edit
+    end
+
+    def update
+        @dive = Dive.update(dive_params)
+        if @dive.save
+            redirect_to @dive
         else
             render :new
         end
@@ -30,7 +41,7 @@ class DivesController < ApplicationController
     def destroy
         @user = @dive.user
         @dive.delete
-        redirect_to divers_dives_path(@user)
+        redirect_to dives_path
     end
 
   private

@@ -1,7 +1,4 @@
 <%= form_for @dive do |f| %>
-    <%# <label>Username</label>
-    <%= f.collection_select :user_id, User.all, :id, :username %>
-    <%# <br> %>
     <%= hidden_field_tag "dive[user_id]", "#{@user.id}" %>
 
     <label>Dive Shop</label>
