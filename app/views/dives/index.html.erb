@@ -1,10 +1,10 @@
 <%= stylesheet_link_tag"application.css"%>
 <!DOCTYPE html>
 <html>
-    <head>
+    <head id='scrollbar'>
         <title>Dive Slate</title>
     </head>
-
+    <div class="content">
     <body>
         <!-- top-bar start -->
         <div id="header">
@@ -15,17 +15,26 @@
             <%= link_to "Dashboard", dives_path %>
             <%= link_to @user.username, user_path(@user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
+
         </div>
         <!-- top-bar end -->
 
+  <!-- main area start, shows current user's dives -->
         <!-- big button to add a new dive -->
+
         <div id="newlog">
             <h4>My Dive Count: <%= @user.total_dives %></h4>
             <h4><%= link_to "Log a New Dive", new_dive_path %></h4>
         </div>
 
         <!-- main area start, shows current user's dives -->
+
         <div id="main">
+            <div id="newlog">
+                <h4><%= link_to "Log a New Dive", dives_path %></h4>
+              </div>
+                <h4>My Dive Count: <%= @user.total_dives %></h4>
+                <h4>My Dives:</h4>
             <ul>
                 <% @dives.each do |dive| %>
                     <li>
@@ -53,6 +62,15 @@
                         <li><%= @top_divers[i].username %> with <%=@top_divers[i].total_dives%> Dives</li>
                     <% end %>
                 </div>
+
+                <div id="marineanimals">
+                    <h4><%= link_to "See Marine Life", marineanimals_path%></h4>
+                </div>
+
+                <div class="">
+
+                </div>
         </div>
     </body>
+  </div>
 </html>

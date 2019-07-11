@@ -4,7 +4,7 @@
     <head>
         <title>Dive Slate</title>
     </head>
-  
+
     <body>
         <!-- top-bar start -->
         <div id="header">
@@ -15,6 +15,7 @@
             <%= link_to "Dashboard", dives_path %>
             <%= link_to @dive.user.username, user_path(@dive.user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
+      
         </div>
         <!-- top-bar end -->
 
@@ -62,7 +63,6 @@
           <h3>Highlights/Notes: </h3>
           <%= @dive.description %>
           <br>
-          <br>
 
           <div class="button">
               <%= link_to "Edit Dive", edit_dive_path(@dive) %> <br>
@@ -76,6 +76,7 @@
           </div>
 
           <div class="button">
+
               <%= link_to "Show all my dives", dives_path%><br>
           </div>
     </div>
