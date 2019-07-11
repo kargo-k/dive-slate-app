@@ -1,8 +1,10 @@
 class DivesController < ApplicationController
-    before_action :redirect_user, only: [:new, :create, :destroy, :index]
+    before_action :redirect_user
+    before_action :set_user, only: [:new, :show, :index, :create]
+    before_action :set_dive, only: [:show, :index, :destroy]
+    
 
     def new
-        @user = this_user
         @dive = Dive.new
     end
 
@@ -18,17 +20,14 @@ class DivesController < ApplicationController
     end
 
     def show
-        @dive = this_dive
     end
 
     def index
-        @user = this_user
         @top_divers = User.all.sort_by {|user| -user.total_dives}
         @top_divesites = Divesite.all.sort_by {|site| -site.dives.count}
     end
 
     def destroy
-        @dive = this_dive
         @user = @dive.user
         @dive.delete
         redirect_to divers_dives_path(@user)
@@ -40,12 +39,12 @@ class DivesController < ApplicationController
         params.require(:dive).permit(:user_id, :diveshop_id, :divesite_id, :date, :time, :water_T, :air_T, :depth, :description, equipment_ids: [], marineanimal_ids: [])
     end
 
-    def this_user
-        User.find(session[:user_id])
+    def set_user
+        @user = User.find(session[:user_id])
     end
 
-    def this_dive
-        Dive.find(params[:id])
+    def set_dive
+        @dive = Dive.find(params[:id])
     end
 
 end

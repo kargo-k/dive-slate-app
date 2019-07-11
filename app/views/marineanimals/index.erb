@@ -1,12 +1,34 @@
-<h2>Marine Animals!</h2>
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
 
-<ol>
-    <% @marineanimals.each do |animal| %>
-        <ul><b><%= link_to animal.name, marineanimal_path(animal) %></b>
-        </ul>
-    <% end %>
-</ol>
+    <body>
+        <!-- top-bar start -->
+        <div id="header">
+            <strong>Dive Slate</strong>
+        </div>
 
-<%= link_to "Add New Animal", new_marineanimal_path%><br>
-<%= link_to "Dives Sites", divesites_path%><br>
-<%= link_to "Home", users_path%>
+        <div id="topbarmenu">
+            <%= link_to "Dashboard", divers_dives_path(@user) %>
+            <%= link_to @user.username, user_path(@user) %>
+            <%= link_to "Logout", logout_path, method: :delete %>
+        </div>
+        <!-- top-bar end -->
+
+        <div id="main">
+            <h2>Marine Animals!</h2>
+
+            <ul>
+                <% @marineanimals.each do |animal| %>
+                    <li><b><%= link_to animal.name, marineanimal_path(animal) %></b>
+                    </li>
+                <% end %>
+            </ul>
+
+            <div class="button"><%= link_to "Add New Animal", new_marineanimal_path%></div>
+        </div>
+    </body>
+</html>
