@@ -1,7 +1,7 @@
 class DivesController < ApplicationController
     before_action :redirect_user
     before_action :set_user, only: [:new, :show, :index, :create]
-    before_action :set_dive, only: [:show, :index, :destroy]
+    before_action :set_dive, only: [:show, :destroy]
     
 
     def new
