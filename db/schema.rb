@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 2019_07_11_194021) do
 
   create_table "equipment", force: :cascade do |t|
     t.string "name"
-    t.string "specs"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -76,7 +75,7 @@ ActiveRecord::Schema.define(version: 2019_07_11_194021) do
     t.string "certification"
     t.integer "age"
     t.string "country"
-    t.integer "total_dives", default: 0
+    t.integer "total_dives"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
