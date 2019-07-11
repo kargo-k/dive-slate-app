@@ -3,7 +3,7 @@ class AuthsController < ApplicationController
   def login
     if session[:user_id] != nil
       user = User.find(session[:user_id])
-      redirect_to divers_dives_path(user)
+      redirect_to dives_path
     end
   end
 
@@ -11,7 +11,7 @@ class AuthsController < ApplicationController
     user = User.find_by(username: params[:auth][:username])
     if user && user.authenticate(params[:auth][:password])
       session[:user_id] = user.id
-      redirect_to divers_dives_path(user)
+      redirect_to dives_path
     else
       flash[:error] = "Hm, that doesn't look right.  Please try again."
       render :login

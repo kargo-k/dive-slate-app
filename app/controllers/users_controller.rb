@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :redirect_user
+  before_action :redirect_user, only: [:index, :show, :edit, :confirm, :update, :destroy]
   before_action :user_params, only: [:create, :update]
-  before_action :set_user
+  before_action :set_user, only: [:index, :show, :edit, :confirm, :update, :destroy]
   
 
   def index

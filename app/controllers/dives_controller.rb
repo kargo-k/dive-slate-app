@@ -1,8 +1,7 @@
 class DivesController < ApplicationController
     before_action :redirect_user
-    before_action :set_user, only: [:new, :show, :index, :create]
-    before_action :set_dive, only: [:show, :index, :destroy]
-    
+    before_action :set_user, only: [:new, :show, :index, :create, :edit, :update]
+    before_action :set_dive, only: [:show, :destroy, :edit, :update]
 
     def new
         @dive = Dive.new
@@ -13,7 +12,20 @@ class DivesController < ApplicationController
         @dive.user.total_dives += 1
         if @dive.save
             @dive.user.save
-            redirect_to show_dive_path(@dive)
+            redirect_to @dive
+        else
+            flash[:error] = "Dive Site and Dive Shop are required"
+            render :new
+            flash.clear
+        end
+    end
+
+    def edit
+    end
+
+    def update
+        if @dive.update(dive_params)
+            redirect_to @dive
         else
             render :new
         end
@@ -23,6 +35,7 @@ class DivesController < ApplicationController
     end
 
     def index
+        @dives = @user.dives.order(date: :desc)
         @top_divers = User.all.sort_by {|user| -user.total_dives}
         @top_divesites = Divesite.all.sort_by {|site| -site.dives.count}
     end
@@ -30,13 +43,13 @@ class DivesController < ApplicationController
     def destroy
         @user = @dive.user
         @dive.delete
-        redirect_to divers_dives_path(@user)
+        redirect_to dives_path
     end
 
   private
 
     def dive_params
-        params.require(:dive).permit(:user_id, :diveshop_id, :divesite_id, :date, :time, :water_T, :air_T, :depth, :description, equipment_ids: [], marineanimal_ids: [])
+        params.require(:dive).permit(:user_id, :diveshop_id, :divesite_id, :date, :water_T, :air_T, :depth, :description, equipment_ids: [], marineanimal_ids: [])
     end
 
     def set_user

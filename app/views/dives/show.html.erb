@@ -12,7 +12,7 @@
         </div>
 
         <div id="topbarmenu">
-            <%= link_to "Dashboard", divers_dives_path(@dive.user) %>
+            <%= link_to "Dashboard", dives_path %>
             <%= link_to @dive.user.username, user_path(@dive.user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
         </div>
@@ -20,18 +20,17 @@
 
         <!-- main area start -->
         <div id="main">
-          <h2>Dive Site: <%= link_to @dive.divesite.name, divesite_path(@dive.divesite) %></h2>
+          <h3>Dive Site: <%= link_to @dive.divesite.name, divesite_path(@dive.divesite) %></h3>
 
-          <label>Dive Shop: </label>
-          <%= link_to @dive.diveshop.name, diveshop_path(@dive.diveshop) %>
+          <h3><% if @dive.diveshop %>
+            Dive Shop: <%= link_to @dive.diveshop.name, diveshop_path(@dive.diveshop) %>
+          <% end %>  
+          </h3>
+          
           <br>
 
           <label>Date: </label>
           <%= @dive.date %>
-          <br>
-
-          <label>Time: </label>
-          <%= @dive.time%>
           <br>
 
           <label>Water Temperature: </label>
@@ -45,28 +44,39 @@
           <label>Depth (m): </label>
           <%= @dive.depth%>
           <br>
+          
+          <h3>Dive Equipment Used</h3>
+          <ul>
+            <% @dive.equipment.each do |equipment| %>
+              <li><%= equipment.name.capitalize %></li>
+            <% end %>
+          </ul>
 
-          <label>Notes/Description: </label>
+            <h3>Marine Life Seen:</h3>
+            <ul>
+                <%@dive.marineanimals.each do |animal|%>
+                  <li><%= link_to animal.name, marineanimal_path(animal)%></li>
+                <% end %>
+            </ul>
+            
+          <h3>Highlights/Notes: </h3>
           <%= @dive.description %>
           <br>
           <br>
-          
-          <h3>Dive Equipment Used</h3>
-
-          <%@dive.equipment.each do |equipment|%>
-          <%=equipment.name.capitalize%>
-          <%end%>
-
-            <BR><BR>
-
-            <h3>Marine Life Seen:</h3>
-            <%@dive.marineanimals.each do |animal|%>
-            <%= link_to animal.name, marineanimal_path(animal)%><br>
-            <% end %>
 
           <div class="button">
-              <%= link_to "Delete this dive", delete_dive_path(@dive), method: :delete %> <br>
-        <%= link_to "Show all my dives", divers_dives_path(@dive.user)%><br>
+              <%= link_to "Edit Dive", edit_dive_path(@dive) %> <br>
+          </div>
+          <div class="button">
+              <%= link_to "Delete Dive", delete_dive_path(@dive), method: :delete %> <br>
+          </div>
+
+          <div class="button">
+            <%= link_to "Log a New Dive", new_dive_path %>
+          </div>
+
+          <div class="button">
+              <%= link_to "Show all my dives", dives_path%><br>
           </div>
     </div>
   </body>

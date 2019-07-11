@@ -45,20 +45,14 @@ usernames = [
 end
 
 # Seeding database with equipment information
-Equipment.create(name: "booties - 3 mm")
-Equipment.create(name: "wetsuit - 3 mm")
-Equipment.create(name: "wetsuit - 5 mm")
-Equipment.create(name: "wetsuit - 7 mm")
-Equipment.create(name: "fins")
-Equipment.create(name: "gloves - 2 mm")
-Equipment.create(name: "hood - 2 mm")
-Equipment.create(name: "rashguard - 1 mm")
+Equipment.create(name: "booties")
+Equipment.create(name: "wetsuit")
+Equipment.create(name: "gloves")
+Equipment.create(name: "hood")
+Equipment.create(name: "rashguard")
 Equipment.create(name: "drysuit")
-Equipment.create(name: "weights - 2 kg")
-Equipment.create(name: "weights - 4 kg")
-Equipment.create(name: "weights - 6 kg")
-Equipment.create(name: "weights - 8 kg")
-Equipment.create(name: "weights - 10 kg")
+Equipment.create(name: "vest")
+Equipment.create(name: "weights")
 
 # Seeding database with divesite information
 Divesite.create(
@@ -124,3 +118,11 @@ Marineanimal.create(name: 'Giant Pacific Octopus', url:'http://www.animalspot.ne
 Marineanimal.create(name: 'Flamboyant Cuttlefish', url:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flamboyant_Cuttlefish-2.jpg/2560px-Flamboyant_Cuttlefish-2.jpg')
 Marineanimal.create(name: 'Whale Shark', url:'https://www.phnompenhpost.com/sites/default/files/styles/full-screen/public/field/image/fish_1.jpg?itok=eIMY5vq-')
 Marineanimal.create(name: 'Hammerhead Shark', url:'https://www.hakaimagazine.com/wp-content/uploads/aaid_header.jpg')
+
+25.times do 
+    Dive.create(
+        user_id: (1..10).to_a.sample,
+        diveshop_id: (1..5).to_a.sample,
+        divesite_id: (1..7).to_a.sample,
+        )
+end
