@@ -17,22 +17,21 @@
             <%= link_to "Logout", logout_path, method: :delete %>
         </div>
         <!-- top-bar end -->
-
-        <div id="main">
-            <h2>🐠 Update Your Profile 🐠</h2>
+    <div id="login" class="form">
+            <h2>🐠<br>Update Your Profile</h2>
 
             <div class="form">
                 <%= render 'form' %>
             </div>
 
             <div class="button">
-                    <%= link_to "Go to my Dashboard", dives_path %>
+                    <%= link_to "Go to my Dashboard", dives_path, {:class => "button"} %>
             </div>
 
             <div class="button">
-                <%=link_to "Delete My Profile <º))))><", confirm_delete_path %>
+                <%=link_to "Delete My Profile ☠️", confirm_delete_path, {:class => "button"}  %>
             </div>
             
-        </div>
+    </div>
     </body>
 </html>

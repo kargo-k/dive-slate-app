@@ -19,12 +19,14 @@
         <!-- top-bar end -->
 
         <!-- main area start -->
-        <div id="main">
-            <h2>🐟 <%=@user.username%> 🐟</h2>
-            <h4> <%=@user.name%> </h4>
-            <h4>Highest Certification: <%=@user.certification%></h4>
+        <div id="login" class="form">
+            <h2>🐟<br><%=@user.username%></h2>
+            
+            <h4><%=@user.name%></h4>
+            <h4><%=@user.country%></h4>
+            <h4><%=@user.certification%></h4>
             <h4>Age: <%=@user.age%></h4>
-            <h4>Country: <%=@user.country%></h4>
+            
             <h4>Total Dives: <%=@user.total_dives%></h4>
 
             <div class="button">
