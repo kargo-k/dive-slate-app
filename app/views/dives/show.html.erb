@@ -57,6 +57,13 @@
           <%=equipment.name.capitalize%>
           <%end%>
 
+            <BR><BR>
+
+            <h3>Marine Life Seen:</h3>
+            <%@dive.marineanimals.each do |animal|%>
+            <%= link_to animal.name, marineanimal_path(animal)%><br>
+            <% end %>
+
           <div class="button">
               <%= link_to "Delete this dive", delete_dive_path(@dive), method: :delete %> <br>
         <%= link_to "Show all my dives", divers_dives_path(@dive.user)%><br>
