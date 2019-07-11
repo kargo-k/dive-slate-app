@@ -4,41 +4,27 @@
     <head id='scrollbar'>
         <title>Dive Slate</title>
     </head>
-    <body>
-        <div class="content">
+  <body>
+      <div class="content">
         <!-- top-bar start -->
         <header>
             <h2>Dive Slate</h2>
 
-        <div id="topbarmenu">
+           <div id="topbarmenu">
             <%= link_to "Dashboard", dives_path %>
             <%= link_to @user.username, user_path(@user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
-          </div>
+           </div>
         </header>
 
         <!-- top-bar end -->
-        <!-- main area start, shows current user's dives -->
-          <div id="main">
-           <h4><%= link_to "Log a New Dive", dives_path %></h4>
-
-  <!-- main area start, shows current user's dives -->
-        <!-- big button to add a new dive -->
-
-        <div id="newlog">
-            <h4>My Dive Count: <%= @user.total_dives %></h4>
-            <h4><%= link_to "Log a New Dive", new_dive_path %></h4>
-        </div>
-
-        <!-- main area start, shows current user's dives -->
-
+    <!-- main area start, shows current user's dives -->
         <div id="main">
-            <div id="newlog">
-                <h4><%= link_to "Log a New Dive", dives_path %></h4>
-              </div>
-                <h4>My Dive Count: <%= @user.total_dives %></h4>
-                <h4>My Dives:</h4>
-            <ul>
+            <h4 id='logdive'><%= link_to "Log a New Dive", dives_path %></h4>
+
+            <h4>My Dive Count: <%= @user.total_dives %></h4>
+            <h4>My Dives:</h4>
+                <ul>
                 <% @dives.each do |dive| %>
                     <li>
                         <b><%= link_to dive.divesite.name, dive_path(dive) %></b>
@@ -46,20 +32,21 @@
                     </li>
                 <% end %>
                 </ul>
-              </div>
-            </div>
-    <!-- main ends -->
+
+
+        </div>
+        <!-- main ends -->
     <!-- explore side bar start -->
-          <div id="sideexplore">
+        <div id="sideexplore">
           <h4>Explore</h4>
 
-            <div id="topdivesites">
+              <div id="topdivesites">
                 <h5>Hottest Dive Sites</h5>
 
                 <% for i in 0..4 %>
                     <li><%= link_to @top_divesites[i].name, divesite_path(@top_divesites[i]) %></li>
                     <% end %>
-            </div>
+              </div>
 
               <div id="topdivers">
                   <h5>Diviest Divers</h5>
@@ -71,7 +58,7 @@
               <div id="marineanimals">
                   <h4><%= link_to "See Marine Life", marineanimals_path%></h4>
               </div>
-            </div>
-    </div>
+        </div>
+      </div>
   </body>
 </html>
