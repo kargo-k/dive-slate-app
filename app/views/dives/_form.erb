@@ -1,14 +1,11 @@
 <%= form_for @dive do |f| %>
     <%= hidden_field_tag "dive[user_id]", "#{@user.id}" %>
-    
-    <p>* denotes required fields</p>
 
-    <label>Dive Site*</label>
+    <label>Dive Site (required)</label>
     <%= f.collection_select :divesite_id, Divesite.all, :id, :name, include_blank: true %>
-
     <br>
     
-    <label>Dive Shop*</label>
+    <label>Dive Shop</label>
     <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name, include_blank: true %>
 
     <br>

@@ -57,44 +57,44 @@ Equipment.create(name: "weights")
 # Seeding database with divesite information
 Divesite.create(
     name: "East Sangat Japanese Gunboat",
-    latitude: "N 11° 58' 32.000000\"",
-    longitude: "E 120° 4' 40.200000\"",
+    latitude: "11.97556",
+    longitude: "120.0722",
     description: "Sunken WWII Japanese Gunboat"
     )
 Divesite.create(
     name: "Siete Pecados Islands",
-    latitude: "N 11° 59' 1.400000\"",
-    longitude: "E 120° 13' 54.100000\"",
+    latitude: "11.98372",
+    longitude: "120.2317",
     description: "Seven small islands with steep cliffs covered in coral"
     )
 Divesite.create(
     name: "Shark Wall",
-    latitude: "N 11° 20' 6.400000\"",
-    longitude: "E 124° 6' 33.400000\"",
+    latitude: "11.33511°",
+    longitude: "124.1093",
     description: "Thresher shark cleaning station"
     )
 Divesite.create(
     name: "Raggie Cave",
-    latitude: "S 30° 15' 45.000000\"",
-    longitude: "E 30° 49' 40.000000\"",
+    latitude: "-30.2625",
+    longitude: "30.82778",
     description: "Large cave and the best spot to view big groups of ragged-tooth sharks during the winter months"
     )
 Divesite.create(
     name: "Pointe Des Pecheurs",
-    latitude: "N 17° 38' 7.900000\"",
-    longitude: "W 148° 37' 6.800000\"",
+    latitude: "17.63553",
+    longitude: "-148.6186",
     description: "Incredible biodiversity of the dive sites showcase the rich flora and fauna, from colourfull nudibranches to Lemon sharks"
     )
 Divesite.create(
     name: "Old Kona Airport South Mooring",
-    latitude: "N 19° 38' 37.200000\"",
-    longitude: "W 156° 0' 56.400000\"",
+    latitude: "19.64367",
+    longitude: "-156.0157",
     description: "Manta feeding station"
     )
 Divesite.create(
     name: "Honaunau Bay/Two Step",
-    latitude: "N 19° 25' 25.000000\"",
-    longitude: "W 155° 54' 43.000000\"",
+    latitude: "19.42361",
+    longitude: "-155.9119",
     description: "Hawaiian spinner dolphins feed at night then rest and take care of their young in the calm inshore waters like Honaunau Bay during daylight"
     )
 
