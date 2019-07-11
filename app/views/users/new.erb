@@ -5,29 +5,32 @@
         <title>Dive Slate</title>
     </head>
     <body>
-        <h2>🐠 Create an Account 🐠</h2>
+        <div id="login" class="form">
+            <div class="bordered"><h1>Dive Slate</h1></div>
 
-        <div class="form">
+        <h2>🐠<br>Create an Account</h2>
+
             <%= form_for @user do |f| %>
 
-                <%= f.label "Select your Username:" %>
-                <%= f.text_field :username %> 
+                <%= f.label "Username:" %>
+                <%= f.text_field :username, class: 'inputfield' %> 
                 
                 <br><br>
 
-                <%= f.label "Choose your Password:" %>
-                <%= f.password_field :password %>
+                <%= f.label "Password:" %>
+                <%= f.password_field :password, class: 'inputfield'  %>
                     
                 <br><br>
 
-                <%= f.label "Confirm your Password:" %>
-                <%= f.password_field :password_confirmation %>
+                <%= f.label "Password:" %>
+                <%= f.password_field :password_confirmation, class: 'inputfield'  %>
 
                 <br><br>
 
-                <%= f.submit %>
-
+                <%= f.submit "Sign Up", {:class => "button"}%>
+                
             <% end %>
+                <%= link_to "Go back to Log In", login_path, {:class => "button"} %>
         </div>
 
         <div class="error" style="color:red">

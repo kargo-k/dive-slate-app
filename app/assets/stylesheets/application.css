@@ -93,13 +93,34 @@ h1 {
   text-align: center;
   color: #fff;
   font-size: 32pt;
-  text-decoration-line: underline
+  margin: .1em .1em;
 }
-
+h2 {
+  font-size: 16pt;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+strong {
+  color: #fff;
+  font-size: 22pt;
+}
+.bordered {
+  border-color: #fff;
+  border-width: 2pt;
+  border-style: solid;
+  margin: 1em;
+}
 .inputfield{
   color: #000;
   font-size: 12pt;
-  padding: 0.5em 0.5em;
+  padding: 0.2em 0.2em;
+  margin: .5em;
+}
+.form-control {
+  font-size: 11pt;
+}
+.form {
+  margin: .2em;
 }
 /* login page */
 #login {
@@ -123,10 +144,20 @@ h1 {
   color: #5398A8;
   padding: 0.5em 1em;
   border-radius: 10px;
-  font-size: 12pt;
+  font-size: 11pt;
   text-decoration-line: none;
+  font-weight: bold;
+  margin-bottom: .3em;
 }
-
+a { 
+  color: #5398A8;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  font-size: 11pt;
+  text-decoration-line: none;
+  font-weight: bold;
+  margin-bottom: .3em;
+}
 img {
 height: 200px;
 width: 300px;
@@ -151,5 +182,4 @@ background: #888;
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 background: #555;
-}
 }
