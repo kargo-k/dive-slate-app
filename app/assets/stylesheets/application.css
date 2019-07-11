@@ -95,6 +95,11 @@ h1 {
   font-size: 32pt;
   margin: .1em .1em;
 }
+h2 {
+  font-size: 16pt;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
 .bordered {
   border-color: #fff;
   border-width: 2pt;
@@ -128,8 +133,10 @@ h1 {
   color: #5398A8;
   padding: 0.5em 1em;
   border-radius: 10px;
-  font-size: 12pt;
+  font-size: 11pt;
   text-decoration-line: none;
+  font-weight: bold;
+  margin-bottom: .3em;
 }
 
 img {
