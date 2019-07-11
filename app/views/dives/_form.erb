@@ -16,17 +16,17 @@
     <h3>Technical Specs</h3>
 
     <label>Water Temperature</label>
-    <%= f.number_field :water_T%>
+    <%= f.number_field :water_T, class: 'inputfield' %>
 
     <br>
 
     <label>Air Temperature</label>
-    <%= f.number_field :air_T%>
+    <%= f.number_field :air_T, class: 'inputfield' %>
 
     <br>
 
     <label>Depth (m)</label>
-    <%= f.number_field :depth%>
+    <%= f.number_field :depth, class: 'inputfield' %>
 
     <br><br>
 
@@ -35,14 +35,6 @@
     <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name) do |b| %>
         <%= b.check_box + b.text.titleize %><br>
     <% end %>
-
-    <%# <%= f.select :equipment_ids, [
-    "OPEN WATER",
-    "ADVANCED OPEN WATER",
-    "NITROX",
-    "RESCUE",
-    "DIVE MASTER",
-    "DIVE INSTRUCTOR"] %>
 
     <br><br>
 
@@ -54,11 +46,11 @@
     <br><br>
 
     <h3>Notes/Highlights:</h3>
-    <%= f.text_area :description %>
+    <%= f.text_area :description , class: 'inputfield', size: "40x10"%>
 
     <br><br>
 
-    <%= f.submit %>
+    <%= f.submit "Log Dive", {:class => "button"}  %>
 <% end %>
 
 <div class="error" style="color:red">

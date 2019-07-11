@@ -23,7 +23,7 @@ html, body {
   background-position: center;
   background-attachment: fixed;
   color: #FFFF;
-
+  text-align: center;
 }
 
 .content {
@@ -34,7 +34,8 @@ grid-gap: 10px;
 max-width: 960px;
 margin: 0 auto;
 /* color: #0F222D; */
-color: #FFFF;
+color: #FFF;
+text-align: left;
 }
 
 .content > * {
@@ -69,7 +70,8 @@ grid-column: 3/7;
 
 /* On the user's dive dashboard, displays all of their dives */
 #main {
-grid-column: 1/9;
+  grid-column: 1/9;
+  padding: 1em;
 }
 
 #logdive {
@@ -118,8 +120,16 @@ strong {
   padding: 0.2em 0.2em;
   margin: .5em;
 }
-.form-control {
-  font-size: 11pt;
+.select-class {
+  position: relative; 
+                display: block; 
+                width: 15em; 
+                height: 2em; 
+                line-height: 3; 
+                overflow: hidden; 
+                border-radius: .25em; 
+                padding-bottom:10px; 
+                  
 }
 .form {
   margin: .2em;
