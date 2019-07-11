@@ -1,27 +1,41 @@
-<h2>Welcome! Please Log In</h2>
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate 🐠</title>
+    </head>
+    <body>
 
-<%=form_for(:auth, url: login_path) do |f| %>
-    <%=f.label :username %>
-    <%=f.text_field :username %>
+        <h2>Dive Slate</h2>
 
-    <br> 
+            <div class="form">
+                <%=form_for(:auth, url: login_path) do |f| %>
+                    <%=f.label :username %>
+                    <%=f.text_field :username %>
 
-    <%=f.label :password %>
-    <%=f.password_field :password %>
+                    <br> 
 
-    <br><br>
+                <%=f.label :password %>
+                <%=f.password_field :password %>
 
-    <%=f.submit "Login"%>
-<%end%>
+                    <br><br>
 
-<br><br>
+                <%=f.submit "Login"%>
+                <%end%>
+            </div>
 
-<div class="error" style="color:red">
-<% if flash[:error] %>
-    <%= flash[:error] %>
-<% end %>
-</div>
+        <br><br>
 
-<br><br><br><br>
+        <div class="error" style="color:red">
+        <% if flash[:error] %>
+            <%= flash[:error] %>
+        <% end %>
+        </div>
 
-<%= link_to "New User? Sign up here!", signup_path %>
+        <br><br><br><br>
+
+        <div id="signup">
+            <%= link_to "New User? Sign up here!", signup_path %>
+        </div>
+    </body>
+</html>

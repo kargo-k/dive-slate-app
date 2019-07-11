@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2019_07_10_182713) do
     t.string "certification"
     t.integer "age"
     t.string "country"
-    t.integer "total_dives"
+    t.integer "total_dives", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -11,10 +11,51 @@
  } */
 
 body {
-<<<<<<< HEAD
-  /* background: blue;  */
-=======
-  background: #5398A8;
-  /* color: #4EADE5; */
->>>>>>> 62b8bf6c18be57a10a2a5ed406f1f8cb58507306
+  /* background: #5398A8; */
+}
+
+/* This is the menu bar at the top of every page with the username and login/logout */
+#topbarmenu {
+
+}
+
+/* Displays on the user's dive dashboard -- shows the total number of dives and a button to create a new dive log */
+#newlog {
+
+}
+
+/* On the user's dive dashboard, displays all of their dives */
+#main {
+
+}
+
+/* Side bar explore menu that contains top divesites and top divers */
+#sideexplore {
+
+}
+#topdivesites {
+
+}
+#topdivers {
+
+}
+
+/* Form Styling */
+.form {
+
+}
+
+/* Signup link on login page */
+#signup {
+
+}
+
+/* Error Mesages for Invalid Login/Signups */
+.error {
+
+}
+
+/* button/links */
+.button {
+
 }

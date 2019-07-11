@@ -1,18 +1,31 @@
-<h2>🐟 <%=@user.username%> 🐟</h2>
-<h4> <%=@user.name%> </h4>
-<h4>Highest Certification: </h4>
-<h5><%=@user.certification%></h5>
-<h4>Age: </h4>
-<h5><%=@user.age%></h5>
-<h4>Country: </h4>
-<h5><%=@user.country%></h5>
-<h4>Total Dives: </h4>
-<h5><%=@user.total_dives%></h5>
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
 
+    <body>
+        <!-- top-bar start -->
+        <div id="header">
+            <strong>Dive Slate</strong>
+        </div>
 
-<%=link_to "Home", users_path%> <br>
-<%=link_to "Edit", edit_user_path(@user)%> <br>
-<%= link_to "Show all my dives", divers_dives_path(@user)%> <br><br>
-<%=link_to "Delete User <º))))><", @user, method: :delete %> <br><br>
-<%= link_to 'Marine Life', marineanimals_path %><br><br>
-<%= link_to "Logout", logout_path, method: :delete %>
+        <div id="topbarmenu">
+            <%= link_to "Go to My Dives Dashboard", divers_dives_path(@user) %>
+            <%= link_to @user.username, user_path(@user) %>
+            <%= link_to "Logout", logout_path, method: :delete %>
+        </div>
+        <!-- top-bar end -->
+
+        <!-- main area start -->
+        <div id="main">
+            <h2>🐟 <%=@user.username%> 🐟</h2>
+            <h4> <%=@user.name%> </h4>
+            <h4>Highest Certification: <%=@user.certification%></h4>
+            <h4>Age: <%=@user.age%></h4>
+            <h4>Country: <%=@user.country%></h4>
+            <h4>Total Dives: <%=@user.total_dives%></h4>
+        </div>
+    </body>
+</html>

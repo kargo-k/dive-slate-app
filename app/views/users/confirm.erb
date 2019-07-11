@@ -11,22 +11,20 @@
             <strong>Dive Slate</strong>
         </div>
 
-        <div id="topbarmenu">
-            <%= link_to "Go to My Dives Dashboard", divers_dives_path(@user) %>
+        <div id="menu">
             <%= link_to @user.username, user_path(@user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
         </div>
         <!-- top-bar end -->
 
-        <!-- main area start -->
         <div id="main">
-            <h2> 🐠 Dive Slate - All Users 🐠</h2>
-            <ul>
-                <% @users.each do |user|%>
-                    <li><%= link_to user.username, user %></li><br>
-                <%end%>
-            </ul>
+            <h4>Are you sure you want to delete your profile?</h4>
+
+            <div class="form">
+                <%= link_to "Yes, delete my profile. <º))))><", @user, method: :delete %>
+                <br><br>
+                <%= link_to "Nevermind, go back!", divers_dives_path(@user) %>
+            </div>
         </div>
     </body>
 </html>
-
