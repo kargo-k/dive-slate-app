@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+  before_action :redirect_user
   before_action :user_params, only: [:create, :update]
   before_action :set_user
-  before_action :redirect_user
+  
 
   def index
     if @user.username == "karen" || @user.username == "danie"

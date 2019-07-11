@@ -1,13 +1,18 @@
 class DiveshopsController < ApplicationController
     before_action :redirect_user
-    
+    before_action :set_user
+
     def show
-        @user = User.find(session[:user_id])
         @diveshop = Diveshop.find(params[:id])
     end
 
     def index
-        @user = User.find(session[:user_id])
         @diveshops = Diveshop.all 
+    end
+
+    private
+
+    def set_user
+        @user = User.find(session[:user_id])
     end
 end
