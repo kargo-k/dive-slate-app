@@ -45,20 +45,14 @@ usernames = [
 end
 
 # Seeding database with equipment information
-Equipment.create(name: "booties - 3 mm")
-Equipment.create(name: "wetsuit - 3 mm")
-Equipment.create(name: "wetsuit - 5 mm")
-Equipment.create(name: "wetsuit - 7 mm")
-Equipment.create(name: "fins")
-Equipment.create(name: "gloves - 2 mm")
-Equipment.create(name: "hood - 2 mm")
-Equipment.create(name: "rashguard - 1 mm")
+Equipment.create(name: "booties")
+Equipment.create(name: "wetsuit")
+Equipment.create(name: "gloves")
+Equipment.create(name: "hood")
+Equipment.create(name: "rashguard")
 Equipment.create(name: "drysuit")
-Equipment.create(name: "weights - 2 kg")
-Equipment.create(name: "weights - 4 kg")
-Equipment.create(name: "weights - 6 kg")
-Equipment.create(name: "weights - 8 kg")
-Equipment.create(name: "weights - 10 kg")
+Equipment.create(name: "vest")
+Equipment.create(name: "weights")
 
 # Seeding database with divesite information
 Divesite.create(

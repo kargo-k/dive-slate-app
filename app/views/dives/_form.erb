@@ -1,13 +1,15 @@
 <%= form_for @dive do |f| %>
     <%= hidden_field_tag "dive[user_id]", "#{@user.id}" %>
+    
+    <p>* denotes required fields</p>
 
-    <label>Dive Shop</label>
-    <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name %>
+    <label>Dive Site*</label>
+    <%= f.collection_select :divesite_id, Divesite.all, :id, :name, include_blank: true %>
 
     <br>
-
-    <label>Dive Site</label>
-    <%= f.collection_select :divesite_id, Divesite.all, :id, :name %>
+    
+    <label>Dive Shop*</label>
+    <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name, include_blank: true %>
 
     <br>
 
@@ -34,11 +36,26 @@
 
     <h3>Select Equipment Used</h3>
 
-    <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name)%><br><br>
+    <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name) do |b| %>
+        <%= b.check_box + b.text.titleize %><br>
+    <% end %>
+
+    <%# <%= f.select :equipment_ids, [
+    "OPEN WATER",
+    "ADVANCED OPEN WATER",
+    "NITROX",
+    "RESCUE",
+    "DIVE MASTER",
+    "DIVE INSTRUCTOR"] %>
+
+    <br><br>
 
     <h3>Marine Life</h3>
 
-    <%= f.collection_check_boxes(:marineanimal_ids, Marineanimal.all, :id, :name)%><br><br>
+    <%= f.collection_check_boxes(:marineanimal_ids, Marineanimal.all, :id, :name) do |b| %>
+        <%= b.check_box + b.text.titleize %><br>
+    <% end %>
+    <br><br>
 
     <h3>Notes/Highlights:</h3>
     <%= f.text_area :description %>
@@ -47,3 +64,9 @@
 
     <%= f.submit %>
 <% end %>
+
+<div class="error" style="color:red">
+    <% if flash[:error] %>
+    <p>Dive Site and Dive Shop are required.</p>
+    <% end %>
+</div>

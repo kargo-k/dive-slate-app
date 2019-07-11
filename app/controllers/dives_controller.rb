@@ -14,7 +14,9 @@ class DivesController < ApplicationController
             @dive.user.save
             redirect_to @dive
         else
+            flash[:error] = "Dive Site and Dive Shop are required"
             render :new
+            flash.clear
         end
     end
 
