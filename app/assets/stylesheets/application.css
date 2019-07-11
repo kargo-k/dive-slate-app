@@ -23,6 +23,7 @@ html, body {
   background-position: center;
   background-attachment: fixed;
   color: #FFFF;
+  font-size: 20px;
 
 }
 
@@ -69,7 +70,8 @@ grid-column: 3/7;
 
 /* On the user's dive dashboard, displays all of their dives */
 #main {
-grid-column: 1/9;
+padding: 2em;
+grid-column: 1/7;
 }
 
 #logdive {
@@ -78,7 +80,8 @@ text-align: center;
 /* Side bar explore menu that contains top divesites and top divers */
 
 #sideexplore {
-grid-column: 9/13;
+padding: 3em;
+grid-column: 7/13;
 }
 
 #sideexplore h4 {
@@ -141,7 +144,7 @@ strong {
 }
 
 /* button/links */
-.button {
+#button {
   background-color: #E8B9BF;
   color: #5398A8;
   padding: 0.5em 1em;
@@ -151,7 +154,7 @@ strong {
   font-weight: bold;
   margin-bottom: .3em;
 }
-a { 
+a {
   color: #5398A8;
   padding: 0.5em 1em;
   border-radius: 10px;
