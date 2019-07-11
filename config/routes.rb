@@ -1,19 +1,23 @@
 Rails.application.routes.draw do
+  root 'auths#login'
   resources :dive_marineanimals
   resources :marineanimals
-  root 'auths#login'
   resources :dive_equipments
-  # resources :dives
   resources :equipment
   resources :users
-  resources :divesites
   resources :diveshops
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  post '/divesites/sort',       to: 'divesites#sort', as: 'sorted_divesites'
+  get '/divesites/:id',         to: 'divesites#show', as: 'divesite'
+  get '/divesites',             to: 'divesites#index'
+  # resources :divesites
 
   get '/users/new',             to: 'users#new', as: 'signup'
   get '/signup',                to: 'users#new'
   post '/signup',               to: 'users#create'
   get '/users',                 to: 'users#index', as: 'all_users'
+  get '/users/:id/delete',      to: 'users#confirm', as: 'confirm_delete'
 
   get '/users/:id/dives/new',   to: 'dives#new', as: 'dives'
   get '/users/:id/dives/',      to: 'dives#index', as: 'divers_dives'

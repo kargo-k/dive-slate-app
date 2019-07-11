@@ -1,33 +1,44 @@
-<h2>🐠 Complete Your Profile 🐠</h2>
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
+    <body>
+        <h2>🐠 Create an Account 🐠</h2>
 
-<%= form_for @user do |f| %>
+        <div class="form">
+            <%= form_for @user do |f| %>
 
-    <%= f.label "Select your Username:" %>
-    <%= f.text_field :username %> 
-    
-    <br><br>
+                <%= f.label "Select your Username:" %>
+                <%= f.text_field :username %> 
+                
+                <br><br>
 
-    <%= f.label "Choose your Password:" %>
-    <%= f.password_field :password %>
-        
-    <br><br>
+                <%= f.label "Choose your Password:" %>
+                <%= f.password_field :password %>
+                    
+                <br><br>
 
-    <%= f.label "Confirm your Password:" %>
-    <%= f.password_field :password_confirmation %>
+                <%= f.label "Confirm your Password:" %>
+                <%= f.password_field :password_confirmation %>
 
-    <br><br>
+                <br><br>
 
-    <%= f.submit %>
+                <%= f.submit %>
 
-<% end %>
+            <% end %>
+        </div>
 
-<div class="error" style="color:red">
-    <ul>
-        <% if flash[:username_error] %>
-            <li>Username already exists!</li>
-        <% end %>
-        <% if flash[:password_error] %>
-            <li>Passwords do not match!</li>
-        <% end %>
-    </ul>
-</div>
+        <div class="error" style="color:red">
+            <ul>
+                <% if flash[:username_error] %>
+                    <li>Username already exists!</li>
+                <% end %>
+                <% if flash[:password_error] %>
+                    <li>Passwords do not match!</li>
+                <% end %>
+            </ul>
+        </div>
+    </body>
+</html>
