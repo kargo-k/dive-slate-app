@@ -26,7 +26,7 @@ color: #FFFF;
 .content {
 display: grid;
 grid-template-columns: repeat(12, 1fr);
-grid-auto-rows: minmax(150px, auto);
+grid-auto-rows: minmax(150px);
 grid-gap: 10px;
 max-width: 960px;
 margin: 0 auto;
@@ -67,17 +67,13 @@ text-align :center;
 
 /* On the user's dive dashboard, displays all of their dives */
 #main {
-grid-column: 1/6;
-}
-
-#main h4 {
-
+grid-column: 1/5;
 }
 
 /* Side bar explore menu that contains top divesites and top divers */
 
 #sideexplore {
-grid-column: 6/13;
+grid-column: 5/13;
 }
 
 #sideexplore h4 {
