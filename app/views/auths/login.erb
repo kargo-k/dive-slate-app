@@ -6,7 +6,7 @@
     </head>
     <body>
             <div id="login" class="form">
-            <h1>Dive Slate</h1>
+            <div class="bordered"><h1>Dive Slate</h1></div>
             <%=form_for(:auth, url: login_path) do |f| %>
                     <p><%=f.label :username %>
                     <%=f.text_field :username, class: 'inputfield'%></p>

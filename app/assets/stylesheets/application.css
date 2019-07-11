@@ -93,9 +93,14 @@ h1 {
   text-align: center;
   color: #fff;
   font-size: 32pt;
-  text-decoration-line: underline
+  margin: .1em .1em;
 }
-
+.bordered {
+  border-color: #fff;
+  border-width: 2pt;
+  border-style: solid;
+  margin: 1em;
+}
 .inputfield{
   color: #000;
   font-size: 12pt;
