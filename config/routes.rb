@@ -19,10 +19,7 @@ Rails.application.routes.draw do
   get '/users',                 to: 'users#index', as: 'all_users'
   get '/users/:id/delete',      to: 'users#confirm', as: 'confirm_delete'
 
-  get '/users/:id/dives/new',   to: 'dives#new', as: 'dives'
-  get '/users/:id/dives/',      to: 'dives#index', as: 'divers_dives'
-  post '/users/:id/dives/:id/', to: 'dives#create'
-  get '/dives/:id/',            to: 'dives#show', as: 'show_dive'
+  resources :dives
   delete '/dives/:id/',         to: 'dives#destroy', as: 'delete_dive'
 
   get    '/login',              to: 'auths#login'

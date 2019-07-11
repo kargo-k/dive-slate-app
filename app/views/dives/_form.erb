@@ -1,26 +1,16 @@
 <%= form_for @dive do |f| %>
-    <%# <label>Username</label>
-    <%= f.collection_select :user_id, User.all, :id, :username %>
-    <%# <br> %>
     <%= hidden_field_tag "dive[user_id]", "#{@user.id}" %>
 
+    <label>Dive Site (required)</label>
+    <%= f.collection_select :divesite_id, Divesite.all, :id, :name, include_blank: true %>
+    <br>
+
     <label>Dive Shop</label>
-    <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name %>
-
+    <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name, include_blank: true %>
     <br>
 
-    <label>Dive Site</label>
-    <%= f.collection_select :divesite_id, Divesite.all, :id, :name %>
-
-    <br>
-
-    <label>Date</label>
-    <%= f.date_select :date, order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 0, end_year: Date.today.year - 100 %>
-    <br>
-
-    <label>Time</label>
-    <%= f.time_select :time%>
-
+    <label>Date/Time</label>
+    <%= f.datetime_select(:date, use_short_month: true, selected: Date.today, include_blank: true, start_year: Date.today.year-10, end_year: Date.today.year, minute_step: 5) %>
     <br>
 
     <h3>Technical Specs</h3>
@@ -38,20 +28,41 @@
     <label>Depth (m)</label>
     <%= f.number_field :depth%>
 
-    <br>
-
-    <label>Notes/Description</label>
-    <%= f.text_area :description %>
-
     <br><br>
 
     <h3>Select Equipment Used</h3>
 
-    <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name)%><br><br>
+    <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name) do |b| %>
+        <%= b.check_box + b.text.titleize %><br>
+    <% end %>
 
-    <h3>See any marine animals?</h3>
+    <%# <%= f.select :equipment_ids, [
+    "OPEN WATER",
+    "ADVANCED OPEN WATER",
+    "NITROX",
+    "RESCUE",
+    "DIVE MASTER",
+    "DIVE INSTRUCTOR"] %>
 
-    <%= f.collection_check_boxes(:marineanimal_ids, Marineanimal.all, :id, :name)%><br><br>
+    <br><br>
+
+    <h3>Marine Life</h3>
+
+    <%= f.collection_check_boxes(:marineanimal_ids, Marineanimal.all, :id, :name) do |b| %>
+        <%= b.check_box + b.text.titleize %><br>
+    <% end %>
+    <br><br>
+
+    <h3>Notes/Highlights:</h3>
+    <%= f.text_area :description %>
+
+    <br><br>
 
     <%= f.submit %>
 <% end %>
+
+<div class="error" style="color:red">
+    <% if flash[:error] %>
+    <p>Dive Site and Dive Shop are required.</p>
+    <% end %>
+</div>

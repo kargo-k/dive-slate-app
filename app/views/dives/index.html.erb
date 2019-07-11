@@ -12,7 +12,7 @@
         </div>
 
         <div id="topbarmenu">
-            <%= link_to "Dashboard", divers_dives_path(@user) %>
+            <%= link_to "Dashboard", dives_path %>
             <%= link_to @user.username, user_path(@user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
 
@@ -21,6 +21,14 @@
 
   <!-- main area start, shows current user's dives -->
         <!-- big button to add a new dive -->
+
+        <div id="newlog">
+            <h4>My Dive Count: <%= @user.total_dives %></h4>
+            <h4><%= link_to "Log a New Dive", new_dive_path %></h4>
+        </div>
+
+        <!-- main area start, shows current user's dives -->
+
         <div id="main">
             <div id="newlog">
                 <h4><%= link_to "Log a New Dive", dives_path %></h4>
@@ -28,9 +36,10 @@
                 <h4>My Dive Count: <%= @user.total_dives %></h4>
                 <h4>My Dives:</h4>
             <ul>
-                <% @user.dives.each do |dive| %>
+                <% @dives.each do |dive| %>
                     <li>
-                        <b><%= link_to dive.divesite.name, show_dive_path(dive) %>: </b><%=dive.description%>
+                        <b><%= link_to dive.divesite.name, dive_path(dive) %></b>
+                        <p><%=dive.description %></p>
                     </li>
                 <% end %>
             </ul>
