@@ -11,14 +11,8 @@
 
     <br>
 
-    <label>Date</label>
-    <%= f.date_select :date%>
-
-    <br>
-
-    <label>Time</label>
-    <%= f.time_select :time%>
-
+    <label>Date/Time</label>
+    <%= f.datetime_select(:date, use_short_month: true, selected: Date.today, include_blank: true, start_year: Date.today.year-10, end_year: Date.today.year, minute_step: 5) %>
     <br>
 
     <h3>Technical Specs</h3>
@@ -36,20 +30,20 @@
     <label>Depth (m)</label>
     <%= f.number_field :depth%>
 
-    <br>
-
-    <label>Notes/Description</label>
-    <%= f.text_area :description %>
-
     <br><br>
 
     <h3>Select Equipment Used</h3>
 
     <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name)%><br><br>
 
-    <h3>See any marine animals?</h3>
+    <h3>Marine Life</h3>
 
     <%= f.collection_check_boxes(:marineanimal_ids, Marineanimal.all, :id, :name)%><br><br>
+
+    <h3>Notes/Highlights:</h3>
+    <%= f.text_area :description %>
+
+    <br><br>
 
     <%= f.submit %>
 <% end %>

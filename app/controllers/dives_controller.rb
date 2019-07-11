@@ -22,8 +22,7 @@ class DivesController < ApplicationController
     end
 
     def update
-        @dive = Dive.update(dive_params)
-        if @dive.save
+        if @dive.update(dive_params)
             redirect_to @dive
         else
             render :new
@@ -47,7 +46,7 @@ class DivesController < ApplicationController
   private
 
     def dive_params
-        params.require(:dive).permit(:user_id, :diveshop_id, :divesite_id, :date, :time, :water_T, :air_T, :depth, :description, equipment_ids: [], marineanimal_ids: [])
+        params.require(:dive).permit(:user_id, :diveshop_id, :divesite_id, :date, :water_T, :air_T, :depth, :description, equipment_ids: [], marineanimal_ids: [])
     end
 
     def set_user

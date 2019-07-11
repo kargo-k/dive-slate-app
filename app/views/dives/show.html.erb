@@ -30,10 +30,6 @@
           <%= @dive.date %>
           <br>
 
-          <label>Time: </label>
-          <%= @dive.time%>
-          <br>
-
           <label>Water Temperature: </label>
           <%= @dive.water_T%>
           <br>
@@ -71,6 +67,11 @@
           <div class="button">
               <%= link_to "Delete Dive", delete_dive_path(@dive), method: :delete %> <br>
           </div>
+
+          <div class="button">
+            <%= link_to "Log a New Dive", new_dive_path %>
+          </div>
+
           <div class="button">
               <%= link_to "Show all my dives", dives_path%><br>
           </div>
