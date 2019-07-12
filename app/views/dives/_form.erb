@@ -38,13 +38,15 @@
         <h3>Equipment</h3>
 
         <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name) do |b| %>
-            <p class="form checkboxes"><%= b.check_box + b.text.titleize %></p>
+            <p class="form checkboxes"><div class="checkbox-only"><%= b.check_box %>
+            <label class="check-label"><%= b.text.titleize %></label></div></p>
         <% end %>
 
         <h3>Marine Life</h3>
 
         <%= f.collection_check_boxes(:marineanimal_ids, Marineanimal.all, :id, :name) do |b| %>
-            <p class="form checkboxes"><%= b.check_box + b.text.titleize %></p>
+            <p class="form checkboxes"><div class="checkbox-only"><%= b.check_box %>
+            <label class="check-label"><%= b.text.titleize %></label></div></p>
         <% end %>
     </div>
 
