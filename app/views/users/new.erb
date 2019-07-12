@@ -11,7 +11,7 @@
         <h2>🐠<br>Create an Account</h2>
 
             <%= form_for @user do |f| %>
-
+                <div class="form-input-container">
                 <%= f.label "Username:" %>
                 <%= f.text_field :username, class: 'inputfield' %> 
                 
@@ -25,7 +25,7 @@
                 <%= f.label "Password:" %>
                 <%= f.password_field :password_confirmation, class: 'inputfield'  %>
 
-                <br><br>
+                </div>
 
                 <%= f.submit "Sign Up", {:class => "button"}%>
                 
@@ -33,15 +33,14 @@
                 <%= link_to "Go back to Log In", login_path, {:class => "button"} %>
         </div>
 
-        <div class="error" style="color:red">
-            <ul>
+        
+
                 <% if flash[:username_error] %>
-                    <li>Username already exists!</li>
+                    <div class="error" style="color:red">Username already exists!</div>
                 <% end %>
                 <% if flash[:password_error] %>
-                    <li>Passwords do not match!</li>
+                    <div class="error" style="color:red">Passwords do not match!</div>
                 <% end %>
-            </ul>
-        </div>
+
     </body>
 </html>

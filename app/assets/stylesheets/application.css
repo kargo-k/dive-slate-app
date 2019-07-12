@@ -222,7 +222,10 @@ strong {
 
 /* Error Mesages for Invalid Login/Signups */
 .error {
-
+  background:rgba(0, 0, 0, .4);
+  text-align: center;
+  width: auto;
+  padding: .5em;
 }
 #totaldives {
   font-weight: bold;
