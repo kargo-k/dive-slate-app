@@ -104,6 +104,10 @@ h2 {
   text-transform: uppercase;
   margin-bottom: 1em;
 }
+div.form-input-container h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
 strong {
   color: #fff;
   font-size: 22pt;
@@ -148,6 +152,12 @@ strong {
 .form-input-container p select {
   height: 30px;
   width: 180px;
+  margin: 8px;
+  padding: 3.2px;
+}
+.form-input-container p.dateform select {
+  height: 30px;
+  width: auto;
   margin: 8px;
   padding: 3.2px;
 }
