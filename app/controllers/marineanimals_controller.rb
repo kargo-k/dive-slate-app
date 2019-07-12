@@ -21,6 +21,16 @@ class MarineanimalsController < ApplicationController
     redirect_to marineanimal_path(@marineanimal)
   end
 
+  def edit
+    @marineanimal = Marineanimal.find(params[:id])
+  end
+
+  def update
+    @marineanimal = Marineanimal.find(params[:id])
+    @marineanimal.update(params.require(:marineanimal).permit(:name, :url))
+    redirect_to marineanimal_path(@marineanimal)
+  end
+
   private
 
   def set_user
