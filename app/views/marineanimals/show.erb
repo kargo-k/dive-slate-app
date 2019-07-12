@@ -21,6 +21,10 @@
         <div id="animalexplore">
             <h2><%=@marineanimal.name%>: </h2>
             <img src="<%=@marineanimal.url%>">
+            <br>
+            <br>
+            <div class="button"><%= link_to "Add New Marine Life", new_marineanimal_path%></div>
+            <div class="button"><%= link_to "Edit Marine Life", edit_marineanimal_path%></div>
         </div>
 
         <div id="animalmain">
@@ -32,8 +36,6 @@
                 </li>
             <% end %>
           </ul>
-          <div class="button"><%= link_to "Add New Marine Life", new_marineanimal_path%></div>
-          <div class="button"><%= link_to "Edit Marine Life", edit_marineanimal_path%></div>
         </div>
       </div>
     </body>
