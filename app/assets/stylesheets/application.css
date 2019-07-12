@@ -157,7 +157,7 @@ strong {
   color: #000;
   font-size: 12pt;
   padding: 0.2em 0.2em;
-  margin: .5em;
+  margin-bottom: .5em;
 }
 .select-class {
   position: relative;
@@ -200,14 +200,14 @@ strong {
 .form-input-container p select {
   height: 30px;
   width: 180px;
-  margin: 8px;
-  padding: 3.2px;
+  margin: 2px;
+  padding: 1px;
 }
 .form-input-container p.dateform select {
   height: 30px;
   width: auto;
-  margin: 8px;
-  padding: 3.2px;
+  margin: 2px;
+  padding: 1px;
 }
 /* login page */
 #login {

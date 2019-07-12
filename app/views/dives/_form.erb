@@ -1,33 +1,33 @@
-
-<div class="form-input-container">
 <%= form_for @dive do |f| %>
-<div class="main">
-    <%= hidden_field_tag "dive[user_id]", "#{@user.id}" %>
+    <div class="main">
+        <div class="form-input-container">
+        <%= hidden_field_tag "dive[user_id]", "#{@user.id}" %>
 
-    <p class="form"><label>Dive Site (required)</label>
-    <%= f.collection_select :divesite_id, Divesite.all, :id, :name, include_blank: true %></p>
+        <p class="form"><label>Dive Site (required)</label>
+        <%= f.collection_select :divesite_id, Divesite.all, :id, :name, include_blank: true %></p>
 
-    <p class="form"><label>Dive Shop</label>
-    <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name, include_blank: true %></p>
+        <p class="form"><label>Dive Shop</label>
+        <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name, include_blank: true %></p>
 
-    <p class="dateform"><label>Date/Time</label>
-    <%= f.datetime_select(:date, use_short_month: true, selected: Date.today, include_blank: true, start_year: Date.today.year-10, end_year: Date.today.year, minute_step: 5, datetime_separator: "", time_separator: "") %>
-    </p>
-</div>
+        <p class="dateform"><label>Date/Time</label>
+        <%= f.datetime_select(:date, use_short_month: true, selected: Date.today, include_blank: true, start_year: Date.today.year-10, end_year: Date.today.year, minute_step: 5, datetime_separator: "", time_separator: "") %>
+        </p>
+
+        <h3>Technical Specs</h3>
+
+        <p class="form"><label>Water Temperature</label>
+        <%= f.number_field :water_T, class: 'inputfield' %></p>
+
+        <p class="form"><label>Air Temperature</label>
+        <%= f.number_field :air_T, class: 'inputfield' %></p>
+
+        <p class="form"><label>Depth (m)</label>
+        <%= f.number_field :depth, class: 'inputfield' %></p>
+
+</div></div>
+
 <div class="sideexplore">
-    <h3>Technical Specs</h3>
-
-    <p class="form"><label>Water Temperature</label>
-    <%= f.number_field :water_T, class: 'inputfield' %></p>
-
-    <p class="form"><label>Air Temperature</label>
-    <%= f.number_field :air_T, class: 'inputfield' %></p>
-
-    <p class="form"><label>Depth (m)</label>
-    <%= f.number_field :depth, class: 'inputfield' %></p>
-
-    <br><br>
-
+<div class="form-input-container">
     <h3>Equipment</h3>
 
     <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name) do |b| %>
