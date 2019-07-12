@@ -6,16 +6,17 @@
     </head>
 
     <body>
+    <div class="content">
         <!-- top-bar start -->
-        <div id="header">
+        <header>
             <strong>Dive Slate</strong>
-        </div>
 
         <div id="topbarmenu">
             <%= link_to "Dashboard", dives_path %>
             <%= link_to @user.username, user_path(@user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
         </div>
+          </header>
         <!-- top-bar end -->
 
         <!-- main area start -->
@@ -23,5 +24,6 @@
             <h2><%= @diveshop.name %></h2>
             <h4>Address: <%= @diveshop.address %></h4>
         </div>
+      </div>
     </body>
 </html>

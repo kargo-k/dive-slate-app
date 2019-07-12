@@ -23,23 +23,51 @@ html, body {
   background-position: center;
   background-attachment: fixed;
   color: #FFFF;
-  text-align: center;
+  font-size: 20px;
+
 }
 
 .content {
-display: grid;
-grid-template-columns: repeat(12, 1fr);
-grid-auto-rows: minmax(150px);
-grid-gap: 10px;
-max-width: 960px;
-margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(150px);
+  grid-gap: 10px;
+  max-width: 960px;
+  margin: 0 auto;
 /* color: #0F222D; */
-color: #FFF;
-text-align: left;
+  color: #FFF;
+  text-align: left;
 }
 
 .content > * {
 background:rgba(0, 0, 0, .4);
+}
+
+.animalcontent > * {
+background:rgba(0, 0, 0, .4);
+}
+
+.animalcontent {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(150px);
+  grid-gap: 10px;
+  max-width: 960px;
+  margin: 0 auto;
+/* color: #0F222D; */
+  color: #FFF;
+  text-align: left;
+}
+
+.divesite {
+  display: grid;
+  grid-auto-rows: minmax(150px);
+  grid-gap: 10px;
+  max-width: 960px;
+  margin: 0 auto;
+  color: #FFF;
+  text-align: left;
+  background:rgba(0, 0, 0, .4);
 }
 
 /* This is the menu bar at the top of every page with the username and login/logout */
@@ -64,19 +92,24 @@ header h2{
   padding-right: .5em;
   padding-bottom: .3em;
 }
-
 /* On the user's dive dashboard, displays all of their dives */
 #main {
-  grid-column: 1/9;
-  padding: 1em;
+  padding: 2em;
+  grid-column: 1/7;
+}
+
+#animalmain {
+  padding: 2em;
+  grid-column: 1/7;
+  grid-row: 4/8;
 }
 #logdive {
-text-align: center;
+t ext-align: center;
 }
 /* Side bar explore menu that contains top divesites and top divers */
 #sideexplore {
-  grid-column: 9/13;
-  padding: .2em;
+  padding: 3em;
+  grid-column: 7/13;
 }
 #sideexplore h4 {
 text-align: center;
@@ -85,6 +118,13 @@ text-align: center;
 }
 #topdivers {
 }
+
+#animalexplore {
+padding: 3em;
+grid-column: 7/13;
+grid-row: 4/8;
+}
+
 h1 {
   text-align: center;
   color: #fff;
@@ -118,6 +158,16 @@ strong {
   font-size: 12pt;
   padding: 0.2em 0.2em;
   margin: .5em;
+}
+.select-class {
+  position: relative;
+  display: block;
+  width: 15em;
+  height: 2em;
+  line-height: 3;
+  overflow: hidden;
+  border-radius: .25em;
+  padding-bottom:10px;
 }
 .rightalign {
   text-align: right;
@@ -184,7 +234,7 @@ strong {
   margin-bottom: .3em;
 }
 /* button/links */
-.button {
+#button {
   background-color: #E8B9BF;
   color: #5398A8;
   padding: 0.5em 1em;
@@ -194,7 +244,7 @@ strong {
   font-weight: bold;
   margin-bottom: .3em;
 }
-a { 
+a {
   color: #5398A8;
   padding: 0.5em 1em;
   border-radius: 10px;

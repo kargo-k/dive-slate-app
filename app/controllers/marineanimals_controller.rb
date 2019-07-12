@@ -8,6 +8,7 @@ class MarineanimalsController < ApplicationController
 
   def show
       @marineanimal = Marineanimal.find(params[:id])
+      @marine = Marineanimal.all
   end
 
   def new

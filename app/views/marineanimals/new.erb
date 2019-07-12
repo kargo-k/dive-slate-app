@@ -1,26 +1,20 @@
 <%= stylesheet_link_tag"application.css"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Dive Slate</title>
-    </head>
-
-    <body>
+      <body>
+        <div class="content">
         <!-- top-bar start -->
-        <div id="header">
+        <header>
             <strong>Dive Slate</strong>
-        </div>
-
-        <div id="topbarmenu">
+            <div id="topbarmenu">
             <%= link_to "Dashboard", dives_path %>
             <%= link_to @user.username, user_path(@user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
-        </div>
+            </div>
+          </header>
         <!-- top-bar end -->
-
-        <div id="main">
-            <h3>Add Marine Animal </h3>
-            <div class="form">
+            <div id="login" class="form">
+              <h3>Add Marine Animal </h3>
                 <%=render 'form'%>
             </div>
         </div>

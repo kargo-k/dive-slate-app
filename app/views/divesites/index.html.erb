@@ -6,16 +6,17 @@
     </head>
 
     <body>
+    <div class="divesite">
         <!-- top-bar start -->
-        <div id="header">
+        <header>
             <strong>Dive Slate</strong>
-        </div>
 
         <div id="topbarmenu">
             <%= link_to "Dashboard", dives_path %>
             <%= link_to @user.username, user_path(@user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
         </div>
+        </header>
         <!-- top-bar end -->
 
         <!-- main area start -->
@@ -26,10 +27,11 @@
                     <li><%= link_to divesite.name, divesite %></li>
                 <% end %>
             </ol>
-            
+
             <div class="button">
                 <%= link_to "Sort by Popularity", sorted_divesites_path, method: :post %>
             </div>
         </div>
+      </div>
     </body>
 </html>
