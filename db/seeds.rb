@@ -136,8 +136,11 @@ Marineanimal.create(name: 'Whale Shark', url:'https://www.phnompenhpost.com/site
 Marineanimal.create(name: 'Hammerhead Shark', url:'https://www.hakaimagazine.com/wp-content/uploads/aaid_header.jpg')
 Marineanimal.create(name: 'Majestic Sea Flap Flap', url:'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6e/cc/d8.jpg')
 Marineanimal.create(name: 'Floaty Potato', url:'https://img.purch.com/h/1400/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzAzMS83MDEvb3JpZ2luYWwvbWFuYXRlZS5KUEc=')
-Marineanimal.create(name: 'Beach Chicken' url: 'https://i.imgflip.com/2rjc68.jpg')
-Marineanimal.create(name: 'Sea Doge' url: 'https://i.redd.it/baw2zrm7kyvz.png')  
+Marineanimal.create(name: 'Beach Chicken', url: 'https://i.imgflip.com/2rjc68.jpg')
+Marineanimal.create(name: 'Sea Doge', url: 'https://i.redd.it/baw2zrm7kyvz.png')  
+Marineanimal.create(name: 'Bunny Nudibranch', url: 'hhttps://media.treehugger.com/assets/images/2015/07/sea-bunny-jorunna-parva.jpg')
+
+
 
 25.times do
     Dive.create(

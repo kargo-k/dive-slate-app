@@ -20,13 +20,14 @@
         <!-- top-bar end -->
     <!-- main area start, shows current user's dives -->
         <div id="main">
-            <div class="rightalign">
-                <%= link_to "Log a New Dive", new_dive_path, {class: "button"} %>
-                <label id="totaldives">Dive Total: <%= @user.total_dives %></label>
+            <div class="center">
+                <h2>Dive Log</h2>
+                <label id="totaldives"><%= @user.total_dives %>  Dives</label>
+                <%= link_to "Log a New Dive", new_dive_path, {class: "logbutton"} %>
             </div>
 
             
-            <h2>Dive Log</h2>
+            
                 <ul>
                 <% @dives.each do |dive| %>
                     <li id="list-entry">
@@ -43,7 +44,7 @@
               <div id="topdivesites">
                 <div class="center"><h2>Popular Sites</h2></div>
                 <ul>
-                <% for i in 0..4 %>
+                <% for i in 0..2 %>
                     <li id="list-entry"><%= link_to @top_divesites[i].name, divesite_path(@top_divesites[i]) %><br><%=@top_divesites[i].description %></li>
                     <% end %>
                 </ul>

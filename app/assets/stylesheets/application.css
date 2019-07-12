@@ -131,6 +131,8 @@ text-align: center;
 #animalexplore {
 padding-top: 2em;
 padding-bottom: 2em;
+padding-right: 2em;
+padding-left: 2em;
 grid-column: 7/13;
 grid-row: 4/8;
 text-align: center;
@@ -317,6 +319,16 @@ p.dateform label {
 .button {
   background-color: #E8B9BF;
   color: #5398A8;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  font-size: 11pt;
+  text-decoration-line: none;
+  font-weight: bold;
+  margin-bottom: .3em;
+}
+.logbutton {
+  background-color: #4EADE5;
+  color: #E8B9BF;
   padding: 0.5em 1em;
   border-radius: 10px;
   font-size: 11pt;
