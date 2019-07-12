@@ -13,8 +13,8 @@
         <p class="form"><label>Dive Shop</label>
             <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name, include_blank: true %></p>
 
-        <p class="dateform"><label>Date</label>
-            <%= f.datetime_select(:date, use_short_month: true, selected: Date.today, include_blank: true, start_year: Date.today.year-10, end_year: Date.today.year, minute_step: 5, datetime_separator: "Time", time_separator: "") %></p>
+        <p class="dateform"><label>Date/Time</label>
+            <%= f.datetime_select(:date, use_short_month: true, selected: Date.today, include_blank: true, start_year: Date.today.year-10, end_year: Date.today.year, minute_step: 5, datetime_separator: "_", time_separator: "") %></p>
 
         <h3>Technical Specs</h3>
 

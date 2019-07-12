@@ -30,7 +30,7 @@
                 <ul>
                 <% @dives.each do |dive| %>
                     <li id="list-entry">
-                        <b><%= link_to dive.divesite.name, dive_path(dive) %></b>
+                        <%= link_to dive.divesite.name, dive_path(dive) %><br><b><%= dive.description %></b>
                     </li>
                 <% end %>
                 </ul>
@@ -44,7 +44,7 @@
                 <div class="center"><h2>Popular Sites</h2></div>
                 <ul>
                 <% for i in 0..4 %>
-                    <li id="list-entry"><%= link_to @top_divesites[i].name, divesite_path(@top_divesites[i]) %></li>
+                    <li id="list-entry"><%= link_to @top_divesites[i].name, divesite_path(@top_divesites[i]) %><br><%=@top_divesites[i].description %></li>
                     <% end %>
                 </ul>
               </div>
@@ -53,13 +53,15 @@
                   <div class="center"><h2>Diviest Divers</h2></div>
                   <ul>
                   <% for i in 0..2 %>
-                      <li id="list-entry" class="list-text"><%= @top_divers[i].username %>: <%=@top_divers[i].total_dives%> Dives</li>
+                      <li id="list-entry"><b id="divers"><%= @top_divers[i].username %>: <%=@top_divers[i].total_dives%> Dives</b></li>
                     <% end %>
                 </ul>
               </div>
-              <div id="marineanimals">
-                  <h4><%= link_to "Explore Marine Life", marineanimals_path, {:class => "button"}%></h4>
 
+              <div id="marineanimals">
+                    <div class="center"><h2>Marine Life</h2><br>
+                        <%= link_to "Explore Marine Life", marineanimals_path, {:class => "button"}%>
+                    </div>
               </div>
         </div>
       </div>
