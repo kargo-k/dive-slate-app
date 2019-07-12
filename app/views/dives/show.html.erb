@@ -15,7 +15,7 @@
             <%= link_to "Dashboard", dives_path %>
             <%= link_to @dive.user.username, user_path(@dive.user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
-      
+
         </div>
         <!-- top-bar end -->
 
@@ -25,9 +25,9 @@
 
           <h3><% if @dive.diveshop %>
             Dive Shop: <%= link_to @dive.diveshop.name, diveshop_path(@dive.diveshop) %>
-          <% end %>  
+          <% end %>
           </h3>
-          
+
           <br>
 
           <label>Date: </label>
@@ -45,7 +45,7 @@
           <label>Depth (m): </label>
           <%= @dive.depth%>
           <br>
-          
+
           <h3>Dive Equipment Used</h3>
           <ul>
             <% @dive.equipment.each do |equipment| %>
@@ -59,7 +59,7 @@
                   <li><%= link_to animal.name, marineanimal_path(animal)%></li>
                 <% end %>
             </ul>
-            
+
           <h3>Highlights/Notes: </h3>
           <%= @dive.description %>
           <br>

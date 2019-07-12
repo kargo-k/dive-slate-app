@@ -6,16 +6,18 @@
     </head>
 
     <body>
+      <div class="divesite">
         <!-- top-bar start -->
-        <div id="header">
+        <header">
             <strong>Dive Slate</strong>
-        </div>
 
-        <div id="topbarmenu">
+            <div id="topbarmenu">
             <%= link_to "Dashboard", dives_path %>
             <%= link_to @user.username, user_path(@user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
-        </div>
+            </div>
+
+        </header>
         <!-- top-bar end -->
 
         <!-- main area start -->
@@ -27,9 +29,10 @@
             <h4>Number of Dives Completed Here: <%= @divesite.dives.count %></h4>
 
             <div class="button">
-                <%= link_to "See all Divesites", divesites_path %> 
+                <%= link_to "See all Divesites", divesites_path %>
             </div>
 
-        </div>
+         </div>
+      </div>
     </body>
 </html>
