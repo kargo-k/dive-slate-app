@@ -145,6 +145,7 @@ strong {
 }
 .center {
   text-align: center;
+  self-align: center;
 }
 .bordered {
   border-color: #fff;
@@ -180,6 +181,7 @@ strong {
   flex-direction: column;
   align-items: start;
   margin-bottom: 2em;
+  align-self: center;
 }
 .form-input-container p {
   width: 100%;
