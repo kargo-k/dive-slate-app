@@ -148,6 +148,7 @@ h2 {
 div.form-input-container h3 {
   text-align: center;
   text-transform: uppercase;
+  margin-top: 20px;
 }
 strong {
   color: #fff;
@@ -167,12 +168,13 @@ div.content h2 {
   border-style: solid;
   margin: 1em;
 }
-.inputfield{
-  color: #000;
+.inputarea{
+  color: #5398A8;
   font-size: 12pt;
-  padding: 0.2em 0.2em;
-  margin-bottom: .5em;
+  padding: 10px;
+  margin-bottom: 30px;
   align-self: center;
+  width: 100%;
 }
 .select-class {
   position: relative;
@@ -195,6 +197,11 @@ div.content h2 {
 }
 .input-container {
   grid-column: 1/4;
+}
+p.form.checkboxes {
+  padding: 0px;
+  font-size: 11pt;
+
 }
 .checkbox-container {
   grid-column: 4/7;

@@ -5,6 +5,8 @@
 
     <div class="input-container" id="dive-input-container">
 
+        <h3>Where & When</h3>
+
         <p class="form"><label>Dive Site (required)</label>
             <%= f.collection_select :divesite_id, Divesite.all, :id, :name %></p>
 
@@ -26,7 +28,7 @@
             <%= f.number_field :depth, class: 'inputfield' %></p>
 
         <div class="center"><h3 class="center">Notes/Highlights:</h3>
-            <%= f.text_area :description , class: 'inputfield'%>
+            <%= f.text_area :description , class: 'inputarea'%>
         </div>
 
         <div class="center"><%= f.submit "Log Dive", {:class => "button"} %></div>
