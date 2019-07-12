@@ -18,10 +18,10 @@
             <%end%>
             <%= link_to "New User? Sign up here!", signup_path, {:class => "button"} %>
             </div> 
-        <div class="error" style="color:red">
+        
         <% if flash[:error] %>
-            <%= flash[:error] %>
+            <div class="error" style="color:red"><%= flash[:error] %></div>
         <% end %>
-        </div>
+        
     </body>
 </html>
