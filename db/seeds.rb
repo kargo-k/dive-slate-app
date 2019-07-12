@@ -119,7 +119,7 @@ shops = [
     "Silbatan Divers",
     "Big Island Diving",
     "diveUNDA",
-    "Underwater Sports"
+    "Underwater Sports",
     "Scuba Club Cozumel"
 ]
 
@@ -138,7 +138,7 @@ Marineanimal.create(name: 'Hammerhead Shark', url:'https://www.hakaimagazine.com
 25.times do
     Dive.create(
         user_id: (1..10).to_a.sample,
-        diveshop_id: (1..5).to_a.sample,
-        divesite_id: (1..7).to_a.sample,
+        diveshop_id: (1..7).to_a.sample,
+        divesite_id: (1..9).to_a.sample,
         )
 end
