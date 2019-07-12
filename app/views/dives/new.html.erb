@@ -6,16 +6,16 @@
     </head>
 
     <body>
-        <!-- top-bar start -->
-        <div id="header">
-            <strong>Dive Slate</strong>
-        </div>
 
+        <!-- top-bar start -->
+        <header>
+            <strong>Dive Slate</strong>
         <div id="topbarmenu">
             <%= link_to "Dashboard", dives_path %>
             <%= link_to @user.username, user_path(@user) %>
             <%= link_to "Logout", logout_path, method: :delete %>
         </div>
+        </header>
         <!-- top-bar end -->
 
         <!-- main area start -->
@@ -25,7 +25,8 @@
             <div class="form">
                 <%= render 'form'%>
             </div>
-            
+
         </div>
+
     </body>
 </html>
