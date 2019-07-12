@@ -201,8 +201,20 @@ div.content h2 {
   padding: 40px;
   width: 90%;
 }
+.edit_dive {
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  grid-row-gap: 10px;
+  grid-column-gap: 100px;
+  padding: 40px;
+  width: 90%;
+}
 .input-container {
   grid-column: 1/4;
+}
+p.form {
+  padding: 0px;
+  font-size: 11pt;
 }
 p.form.checkboxes {
   padding: 0px;
@@ -231,7 +243,6 @@ p.form.checkboxes {
   align-self: center;
 }
 .form-input-container p {
-
   display: flex;
   justify-content: space-between;
 }
@@ -271,6 +282,9 @@ label.check-label {
   height: 25px;
   width: 100%;
   padding: 1px;
+}
+p.dateform label {
+  font-size: 11pt;
 }
 /* login page */
 #login {

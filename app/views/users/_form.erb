@@ -1,10 +1,15 @@
 <%= form_for @user do |f| %>
-<div class="form-input-container">
-  <p class="form"><label>Username: </label><%= f.text_field :username, class: 'inputfield' %></p>
+<div class="form-container">
+<div class="form-input-container" > <div class="input-container">
   
-  <p class="form"><label>Name: </label><%= f.text_field :name, class: 'inputfield' %></p>
+  <p class="form"><label>Username:</label>
+  <%= f.text_field :username, class: 'inputfield' %></p>
   
-  <p class="form"><label>Certification: </label><%= f.select :certification, [
+  <p class="form"><label>Name:</label>
+  <%= f.text_field :name, class: 'inputfield' %></p>
+  
+  <p class="form"><label>Certification:</label>
+  <%= f.select :certification, [
     "OPEN WATER",
     "ADVANCED OPEN WATER",
     "NITROX",
@@ -12,12 +17,16 @@
     "DIVE MASTER",
     "DIVE INSTRUCTOR"], {:class=>'form'} %></p>
   
-  <p class="form"><label>Age: </label><%= f.number_field :age, class: 'inputfield' %></p>
+  <p class="form"><label>Age: </label>
+  <%= f.number_field :age, class: 'inputfield' %></p>
   
-  <p class="form"><label>Country: </label><%= f.text_field :country, class: 'inputfield'   %></p>
+  <p class="form"><label>Country: </label>
+  <%= f.text_field :country, class: 'inputfield' %></p>
   
-  <p class="form"><label>Total Dives: </label><%= f.number_field :total_dives, class: 'inputfield'   %></p>
-</div>
+  <p class="form"><label>Total Dives: </label>
+  <%= f.number_field :total_dives, class: 'inputfield'   %></p>
 
+  </div></div>
   <%= f.submit "Update Profile", {:class => "button"} %>
 <% end %>
+</div>
