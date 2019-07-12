@@ -119,7 +119,7 @@ shops = [
     "Silbatan Divers",
     "Big Island Diving",
     "diveUNDA",
-    "Underwater Sports",
+    "Underwater Sports"
     "Scuba Club Cozumel"
 ]
 
