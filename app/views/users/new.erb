@@ -12,18 +12,14 @@
 
             <%= form_for @user do |f| %>
                 <div class="form-input-container">
-                <%= f.label "Username:" %>
-                <%= f.text_field :username, class: 'inputfield' %> 
-                
-                <br><br>
+                <p><%= f.label "Username:" %>
+                <%= f.text_field :username, class: 'inputfield' %> </p>
 
-                <%= f.label "Password:" %>
-                <%= f.password_field :password, class: 'inputfield'  %>
-                    
-                <br><br>
+                <p><%= f.label "Password:" %>
+                <%= f.password_field :password, class: 'inputfield'  %></p>
 
-                <%= f.label "Password:" %>
-                <%= f.password_field :password_confirmation, class: 'inputfield'  %>
+                <p><%= f.label "Password:" %>
+                <%= f.password_field :password_confirmation, class: 'inputfield'  %></p>
 
                 </div>
 
