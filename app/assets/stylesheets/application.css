@@ -104,11 +104,11 @@ header h2{
   grid-row: 4/8;
 }
 #logdive {
-t ext-align: center;
+  text-align: center;
 }
 /* Side bar explore menu that contains top divesites and top divers */
 #sideexplore {
-  padding: 3em;
+  padding: 2em;
   grid-column: 7/13;
 }
 #sideexplore h4 {
@@ -120,9 +120,11 @@ text-align: center;
 }
 
 #animalexplore {
-padding: 3em;
+padding-top: 2em;
+padding-bottom: 2em;
 grid-column: 7/13;
 grid-row: 4/8;
+text-align: center;
 }
 
 h1 {
