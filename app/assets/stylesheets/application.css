@@ -45,53 +45,45 @@ background:rgba(0, 0, 0, .4);
 /* This is the menu bar at the top of every page with the username and login/logout */
 
 header {
-display: grid;
-
-font-family: 'Roboto Slab', serif;
-font-size: 20pt;
-grid-template-colmuns: repeat(6, 1fr);
-grid-column: 1/13;
-grid-row: 1/4;
-
+  display: grid;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20pt;
+  grid-template-colmuns: repeat(6, 1fr);
+  grid-column: 1/13;
+  grid-row: 1/4;
 }
 
 header h2{
-grid-column: 1/3;
+  grid-column: 1/3;
 }
 
 #topbarmenu {
-grid-column: 3/7;
-
+  grid-column: 3/7;
+  text-align: right;
+  align-self: center;
+  padding-right: .5em;
+  padding-bottom: .3em;
 }
-
-
-/* Displays on the user's dive dashboard -- shows the total number of dives and a button to create a new dive log */
-
 
 /* On the user's dive dashboard, displays all of their dives */
 #main {
   grid-column: 1/9;
   padding: 1em;
 }
-
 #logdive {
 text-align: center;
 }
 /* Side bar explore menu that contains top divesites and top divers */
-
 #sideexplore {
-grid-column: 9/13;
+  grid-column: 9/13;
+  padding: .2em;
 }
-
 #sideexplore h4 {
 text-align: center;
 }
-
 #topdivesites {
-
 }
 #topdivers {
-
 }
 h1 {
   text-align: center;
@@ -112,6 +104,9 @@ strong {
   color: #fff;
   font-size: 22pt;
 }
+.center {
+  text-align: center;
+}
 .bordered {
   border-color: #fff;
   border-width: 2pt;
@@ -123,6 +118,9 @@ strong {
   font-size: 12pt;
   padding: 0.2em 0.2em;
   margin: .5em;
+}
+.rightalign {
+  text-align: right;
 }
 .form {
   margin: .2em;
@@ -176,7 +174,15 @@ strong {
 .error {
 
 }
-
+#totaldives {
+  font-weight: bold;
+  color: #fff;
+  background-color: #5398A8;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  font-size: 11pt;
+  margin-bottom: .3em;
+}
 /* button/links */
 .button {
   background-color: #E8B9BF;
