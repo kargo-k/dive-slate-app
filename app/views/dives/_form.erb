@@ -1,39 +1,34 @@
 <%= form_for @dive do |f| %>
+<div class="form-input-container">
     <%= hidden_field_tag "dive[user_id]", "#{@user.id}" %>
 
-    <label>Dive Site (required)</label>
-    <%= f.collection_select :divesite_id, Divesite.all, :id, :name, include_blank: true %>
-    <br>
+    <p class="form"><label>Dive Site (required)</label>
+    <%= f.collection_select :divesite_id, Divesite.all, :id, :name, include_blank: true %></p>
 
-    <label>Dive Shop</label>
-    <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name, include_blank: true %>
-    <br>
+    <p class="form"><label>Dive Shop</label>
+    <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name, include_blank: true %></p>
 
-    <label>Date/Time</label>
+    <p class="dateform"><label>Date/Time</label>
     <%= f.datetime_select(:date, use_short_month: true, selected: Date.today, include_blank: true, start_year: Date.today.year-10, end_year: Date.today.year, minute_step: 5) %>
-    <br>
+    </p>
 
     <h3>Technical Specs</h3>
 
-    <label>Water Temperature</label>
-    <%= f.number_field :water_T, class: 'inputfield' %>
+    <p class="form"><label>Water Temperature</label>
+    <%= f.number_field :water_T, class: 'inputfield' %></p>
 
-    <br>
+    <p class="form"><label>Air Temperature</label>
+    <%= f.number_field :air_T, class: 'inputfield' %></p>
 
-    <label>Air Temperature</label>
-    <%= f.number_field :air_T, class: 'inputfield' %>
-
-    <br>
-
-    <label>Depth (m)</label>
-    <%= f.number_field :depth, class: 'inputfield' %>
+    <p class="form"><label>Depth (m)</label>
+    <%= f.number_field :depth, class: 'inputfield' %></p>
 
     <br><br>
 
-    <h3>Select Equipment Used</h3>
+    <h3>Equipment</h3>
 
     <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name) do |b| %>
-        <%= b.check_box + b.text.titleize %><br>
+        <p class="form"><%= b.check_box + b.text.titleize %></p>
     <% end %>
 
     <br><br>
@@ -41,20 +36,16 @@
     <h3>Marine Life</h3>
 
     <%= f.collection_check_boxes(:marineanimal_ids, Marineanimal.all, :id, :name) do |b| %>
-        <%= b.check_box + b.text.titleize %><br>
+        <p class="form"><%= b.check_box + b.text.titleize %></p>
     <% end %>
     <br><br>
 
-    <h3>Notes/Highlights:</h3>
-    <%= f.text_area :description , class: 'inputfield', size: "40x10"%>
+    <h3>Notes/Highlights:</h3><br>
+    <%= f.text_area :description , class: 'inputfield', size: "50x10"%>
 
-    <br><br>
+
+</div>
 
     <%= f.submit "Log Dive", {:class => "button"}  %>
 <% end %>
 
-<div class="error" style="color:red">
-    <% if flash[:error] %>
-    <p>Dive Site and Dive Shop are required.</p>
-    <% end %>
-</div>
