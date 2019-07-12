@@ -23,7 +23,7 @@ html, body {
   background-position: center;
   background-attachment: fixed;
   color: #FFFF;
-  font-size: 20px;
+  font-size: 12pt;
   text-align: center;
 }
 
@@ -257,7 +257,42 @@ img {
 height: 200px;
 width: 300px;
 }
-
+ul,ol {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  color: #91EACE;
+}
+li {
+  padding-left: 1em;
+  text-indent: -1em;
+  color: #91EACE;
+}
+li a {
+  color: #91EACE;
+}
+li:before {
+  content: "🐟";
+  padding-left: 20px;
+  color: #91EACE;
+}
+li#list-entry{
+  background: rgb(83,152,168,.7);
+  border-radius: 10px;
+  margin: 0.5em;
+  padding-bottom: 0.2em;
+  font-size: 11pt;
+  color: #91EACE;
+}
+li#list-entry.list-text:before{
+  background: rgb(83,152,168,.7);
+  border-radius: 10px;
+  margin: 0em;
+  padding-bottom: 0.2em;
+  font-size: 11pt;
+  padding-right: 6px;
+  color: #91EACE;
+}
 #scrollbar {
 /* width */
 ::-webkit-scrollbar {
