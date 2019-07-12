@@ -4,7 +4,7 @@
         <%= hidden_field_tag "dive[user_id]", "#{@user.id}" %>
 
         <p class="form"><label>Dive Site (required)</label>
-            <%= f.collection_select :divesite_id, Divesite.all, :id, :name, include_blank: true %></p>
+            <%= f.collection_select :divesite_id, Divesite.all, :id, :name %></p>
 
         <p class="form"><label>Dive Shop</label>
             <%= f.collection_select :diveshop_id, Diveshop.all, :id, :name, include_blank: true %></p>
