@@ -1,7 +1,9 @@
-<div class="form-input-container">
-    <div class="center">
+<div class="form-container">
+<div class="form-input-container" id="dive-form">
     <%= form_for @dive do |f| %>
         <%= hidden_field_tag "dive[user_id]", "#{@user.id}" %>
+
+    <div class="input-container" id="dive-input-container">
 
         <p class="form"><label>Dive Site (required)</label>
             <%= f.collection_select :divesite_id, Divesite.all, :id, :name %></p>
@@ -23,23 +25,29 @@
         <p class="form"><label>Depth (m)</label>
             <%= f.number_field :depth, class: 'inputfield' %></p>
 
+        <div class="center"><h3 class="center">Notes/Highlights:</h3>
+            <%= f.text_area :description , class: 'inputfield'%>
+        </div>
+
+        <div class="center"><%= f.submit "Log Dive", {:class => "button"} %></div>
+    </div>
+
+    <div class="checkbox-container" id="dive-checkbox-container">
         <h3>Equipment</h3>
 
         <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name) do |b| %>
-            <p class="form"><%= b.check_box + b.text.titleize %></p>
+            <p class="form checkboxes"><%= b.check_box + b.text.titleize %></p>
         <% end %>
 
         <h3>Marine Life</h3>
 
         <%= f.collection_check_boxes(:marineanimal_ids, Marineanimal.all, :id, :name) do |b| %>
-            <p class="form"><%= b.check_box + b.text.titleize %></p>
+            <p class="form checkboxes"><%= b.check_box + b.text.titleize %></p>
         <% end %>
-    
-        <div class="center"><h3 class="center">Notes/Highlights:</h3>
-            <%= f.text_area :description , class: 'inputfield', size: "50x10"%>
-        </div>
-
-        <div class="center"><%= f.submit "Log Dive", {:class => "button"} %></div>
-    <% end %>
     </div>
+
+
+        
+    <% end %>
+</div>
 </div>

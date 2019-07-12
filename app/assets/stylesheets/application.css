@@ -31,7 +31,17 @@ html, body {
   color: #FFF;
   text-align: left;
 }
-
+.content header {
+  grid-column: 1/13;
+  grid-row: 1/2;
+}
+.content h2 {
+  grid-column: 1/13;
+  grid-row: 2/3;
+}
+.content .form {
+  grid-column: 1/13;
+}
 .content > * {
 background:rgba(0, 0, 0, .4);
 }
@@ -143,6 +153,10 @@ strong {
   color: #fff;
   font-size: 22pt;
 }
+div.content h2 {
+  text-align: center;
+  padding: 10px;
+}
 .center {
   text-align: center;
   self-align: center;
@@ -172,6 +186,18 @@ strong {
 }
 .rightalign {
   text-align: right;
+}
+.new_dive {
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  grid-gap: 100px;
+  padding: 40px;
+}
+.input-container {
+  grid-column: 1/4;
+}
+.checkbox-container {
+  grid-column: 4/7;
 }
 .form {
   margin: .2em;
