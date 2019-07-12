@@ -98,13 +98,29 @@ Divesite.create(
     description: "Hawaiian spinner dolphins feed at night then rest and take care of their young in the calm inshore waters like Honaunau Bay during daylight"
     )
 
+Divesite.create(
+    name: "SourceCape Kri - Raja Ampat, Indonesia",
+    latitude: "130.505218",
+    longitude: "-1.0320468",
+    description: "One of the best spots for seeing a large variety of fish and other marine life."
+    )
+
+  Divesite.create(
+    name: "The Great Blue Hole",
+    latitude: "17.3160476",
+    longitude: "-87.5351438",
+    description: "The biggest marine sinkhole off of the coast of Belize."
+    )
+
 # Create diveshop data using Faker gem
 shops = [
     "Peter's Dive Shop",
     "Bongo Bongo Divers",
     "Silbatan Divers",
     "Big Island Diving",
-    "diveUNDA"
+    "diveUNDA",
+    "Underwater Sports",
+    "Scuba Club Cozumel"
 ]
 
 shops.each do |shop|
@@ -119,7 +135,7 @@ Marineanimal.create(name: 'Flamboyant Cuttlefish', url:'https://upload.wikimedia
 Marineanimal.create(name: 'Whale Shark', url:'https://www.phnompenhpost.com/sites/default/files/styles/full-screen/public/field/image/fish_1.jpg?itok=eIMY5vq-')
 Marineanimal.create(name: 'Hammerhead Shark', url:'https://www.hakaimagazine.com/wp-content/uploads/aaid_header.jpg')
 
-25.times do 
+25.times do
     Dive.create(
         user_id: (1..10).to_a.sample,
         diveshop_id: (1..5).to_a.sample,
