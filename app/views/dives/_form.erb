@@ -1,5 +1,4 @@
 <%= form_for @dive do |f| %>
-    <div class="main">
         <div class="form-input-container">
         <%= hidden_field_tag "dive[user_id]", "#{@user.id}" %>
 
@@ -24,10 +23,6 @@
         <p class="form"><label>Depth (m)</label>
         <%= f.number_field :depth, class: 'inputfield' %></p>
 
-</div></div>
-
-<div class="sideexplore">
-<div class="form-input-container">
     <h3>Equipment</h3>
 
     <%= f.collection_check_boxes(:equipment_ids, Equipment.all, :id, :name) do |b| %>
@@ -40,12 +35,13 @@
         <p class="form"><%= b.check_box + b.text.titleize %></p>
     <% end %>
     <br><br>
+    </div>
+    <div class="center"><h3 class="center">Notes/Highlights:</h3>
+    <%= f.text_area :description , class: 'inputfield', size: "50x10"%></div>
 
-    <h3>Notes/Highlights:</h3><br>
-    <%= f.text_area :description , class: 'inputfield', size: "50x10"%>
+    </div>
 
-</div>
+   <div class="center"> <%= f.submit "Log Dive", {:class => "button"}  %> </div>
 
-    <%= f.submit "Log Dive", {:class => "button"}  %>
+
 <% end %>
-</div>

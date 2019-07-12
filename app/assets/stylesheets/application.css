@@ -6,13 +6,6 @@
 #9D9BDC (blue bell)
  */
 
- /* #page-container {
-   width: 760px;
-   margin: auto;
-   background: #4EADE5;
- }
-*/
-
 /* importing fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
 
@@ -97,6 +90,10 @@ header h2{
   padding: 2em;
   grid-column: 1/7;
 }
+#single {
+  padding: 2em;
+  grid-column: 1/13;
+}
 
 #animalmain {
   padding: 2em;
@@ -160,6 +157,7 @@ strong {
   font-size: 12pt;
   padding: 0.2em 0.2em;
   margin-bottom: .5em;
+  align-self: center;
 }
 .select-class {
   position: relative;
