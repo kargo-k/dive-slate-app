@@ -8,22 +8,25 @@
       <div class="content">
         <!-- top-bar start -->
         <header>
-            <h2>Dive Slate</h2>
+            <h1>Dive Slate</h1>
 
            <div id="topbarmenu">
-            <%= link_to "Dashboard", dives_path %>
-            <%= link_to @user.username, user_path(@user) %>
-            <%= link_to "Logout", logout_path, method: :delete %>
+            <%= link_to "Dashboard", dives_path, {class: "button"} %>
+            <%= link_to @user.username, user_path(@user), {class: "button"}  %>
+            <label class="button"><%= link_to "Logout", logout_path, method: :delete %></label>
            </div>
         </header>
 
         <!-- top-bar end -->
     <!-- main area start, shows current user's dives -->
         <div id="main">
-            <h4 id='logdive'><%= link_to "Log a New Dive", dives_path %></h4>
+            <div class="rightalign">
+                <%= link_to "Log a New Dive", new_dive_path, {class: "button"} %>
+                <label id="totaldives">Dive Total: <%= @user.total_dives %></label>
+            </div>
 
-            <h4>My Dive Count: <%= @user.total_dives %></h4>
-            <h4>My Dives:</h4>
+            
+            <h2>Dive Log</h2>
                 <ul>
                 <% @dives.each do |dive| %>
                     <li>
@@ -38,25 +41,26 @@
         <!-- main ends -->
     <!-- explore side bar start -->
         <div id="sideexplore">
-          <h4>Explore</h4>
-
               <div id="topdivesites">
-                <h5>Hottest Dive Sites</h5>
-
+                <div class="center"><h2>Popular Sites</h2></div>
+                <ol>
                 <% for i in 0..4 %>
                     <li><%= link_to @top_divesites[i].name, divesite_path(@top_divesites[i]) %></li>
                     <% end %>
+                </ol>
               </div>
 
               <div id="topdivers">
-                  <h5>Diviest Divers</h5>
-                  <% for i in 0..4 %>
+                  <div class="center"><h2>Diviest Divers</h2></div>
+                  <ol>
+                  <% for i in 0..2 %>
                       <li><%= @top_divers[i].username %> with <%=@top_divers[i].total_dives%> Dives</li>
                     <% end %>
+                </ol>
               </div>
-                  <br><br>
-              <div id="button">
-                  <h4><%= link_to "See Marine Life", marineanimals_path%></h4>
+              <div id="marineanimals">
+                  <h4><%= link_to "Explore Marine Life", marineanimals_path, {:class => "button"}%></h4>
+
               </div>
         </div>
       </div>
