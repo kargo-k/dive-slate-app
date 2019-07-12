@@ -6,10 +6,10 @@
     </head>
 
     <body>
+    <div class="content">
         <!-- top-bar start -->
-        <div id="header">
+        <header>
             <strong>Dive Slate</strong>
-        </div>
 
         <div id="topbarmenu">
             <%= link_to "Dashboard", dives_path %>
@@ -17,6 +17,7 @@
             <%= link_to "Logout", logout_path, method: :delete %>
 
         </div>
+        </header>
         <!-- top-bar end -->
 
         <!-- main area start -->
@@ -30,29 +31,30 @@
 
           <br>
 
-          <label>Date: </label>
-          <%= @dive.date %>
-          <br>
+            <label>Date: </label>
+            <%= @dive.date %>
+            <br>
 
-          <label>Water Temperature: </label>
-          <%= @dive.water_T%>
-          <br>
+            <label>Water Temperature: </label>
+            <%= @dive.water_T%>
+            <br>
 
-          <label>Air Temperature: </label>
-          <%= @dive.air_T%>
-          <br>
+            <label>Air Temperature: </label>
+            <%= @dive.air_T%>
+            <br>
 
-          <label>Depth (m): </label>
-          <%= @dive.depth%>
-          <br>
+            <label>Depth (m): </label>
+            <%= @dive.depth%>
+            <br>
 
-          <h3>Dive Equipment Used</h3>
-          <ul>
+            <h3>Dive Equipment Used</h3>
+            <ul>
             <% @dive.equipment.each do |equipment| %>
               <li><%= equipment.name.capitalize %></li>
             <% end %>
-          </ul>
-
+            </ul>
+        </div>
+          <div id="sideexplore"
             <h3>Marine Life Seen:</h3>
             <ul>
                 <%@dive.marineanimals.each do |animal|%>
@@ -60,25 +62,28 @@
                 <% end %>
             </ul>
 
-          <h3>Highlights/Notes: </h3>
-          <%= @dive.description %>
-          <br>
+            <h3>Highlights/Notes: </h3>
+              <%= @dive.description %>
+              <br>
+              <br>
+              <br>
 
-          <div class="button">
+              <div class="button">
               <%= link_to "Edit Dive", edit_dive_path(@dive) %> <br>
-          </div>
-          <div class="button">
+              </div>
+              <div class="button">
               <%= link_to "Delete Dive", delete_dive_path(@dive), method: :delete %> <br>
-          </div>
+              </div>
 
-          <div class="button">
-            <%= link_to "Log a New Dive", new_dive_path %>
-          </div>
+              <div class="button">
+                <%= link_to "Log a New Dive", new_dive_path %>
+              </div>
 
-          <div class="button">
+              <div class="button">
 
               <%= link_to "Show all my dives", dives_path%><br>
+              </div>
           </div>
-    </div>
+        </div>
   </body>
 </html>
