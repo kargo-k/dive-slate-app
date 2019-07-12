@@ -6,23 +6,22 @@
     </head>
 
     <body>
-    <div class="content">
+      <div class="content">
         <!-- top-bar start -->
         <header>
-            <strong>Dive Slate</strong>
+            <h1>Dive Slate</h1>
 
-        <div id="topbarmenu">
-            <%= link_to "Dashboard", dives_path %>
-            <%= link_to @dive.user.username, user_path(@dive.user) %>
-            <%= link_to "Logout", logout_path, method: :delete %>
-
-        </div>
+           <div id="topbarmenu">
+            <%= link_to "Dashboard", dives_path, {class: "button"} %>
+            <%= link_to @user.username, user_path(@user), {class: "button"}  %>
+            <label class="button"><%= link_to "Logout", logout_path, method: :delete %></label>
+           </div>
         </header>
         <!-- top-bar end -->
 
         <!-- main area start -->
         <div id="main">
-          <h3>Dive Site: <%= link_to @dive.divesite.name, divesite_path(@dive.divesite) %></h3>
+          <h2><%= @dive.divesite.name %></h2>
 
           <h3><% if @dive.diveshop %>
             Dive Shop: <%= link_to @dive.diveshop.name, diveshop_path(@dive.diveshop) %>

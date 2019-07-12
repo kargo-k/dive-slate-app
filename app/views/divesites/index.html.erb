@@ -6,16 +6,16 @@
     </head>
 
     <body>
-    <div class="divesite">
+          <div class="content">
         <!-- top-bar start -->
         <header>
-            <strong>Dive Slate</strong>
+            <h1>Dive Slate</h1>
 
-        <div id="topbarmenu">
-            <%= link_to "Dashboard", dives_path %>
-            <%= link_to @user.username, user_path(@user) %>
-            <%= link_to "Logout", logout_path, method: :delete %>
-        </div>
+           <div id="topbarmenu">
+            <%= link_to "Dashboard", dives_path, {class: "button"} %>
+            <%= link_to @user.username, user_path(@user), {class: "button"}  %>
+            <label class="button"><%= link_to "Logout", logout_path, method: :delete %></label>
+           </div>
         </header>
         <!-- top-bar end -->
 
@@ -24,7 +24,7 @@
             <h2>All Dive Sites</h2>
             <ol>
                 <% @divesites.each do |divesite| %>
-                    <li><%= link_to divesite.name, divesite %></li>
+                    <li id="list-entry"><%= link_to divesite.name, divesite %></li>
                 <% end %>
             </ol>
 

@@ -6,27 +6,28 @@
     </head>
 
     <body>
-
+    <div class="content">
         <!-- top-bar start -->
         <header>
-            <strong>Dive Slate</strong>
-        <div id="topbarmenu">
-            <%= link_to "Dashboard", dives_path %>
-            <%= link_to @user.username, user_path(@user) %>
-            <%= link_to "Logout", logout_path, method: :delete %>
-        </div>
+            <h1>Dive Slate</h1>
+
+           <div id="topbarmenu">
+            <%= link_to "Dashboard", dives_path, {class: "button"} %>
+            <%= link_to @user.username, user_path(@user), {class: "button"}  %>
+            <label class="button"><%= link_to "Logout", logout_path, method: :delete %></label>
+           </div>
         </header>
         <!-- top-bar end -->
 
         <!-- main area start -->
-        <div id="login" class="form">
-            <h2>🦞<br>Log a New Dive</h2>
+
+        <div id="single" class="form">
+            <div class="center"><h2>🦞<br>Log a New Dive</h2></div>
             
             <div class="form">
                 <%= render 'form'%>
             </div>
 
         </div>
-
     </body>
 </html>

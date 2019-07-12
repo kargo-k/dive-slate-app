@@ -6,13 +6,6 @@
 #9D9BDC (blue bell)
  */
 
- /* #page-container {
-   width: 760px;
-   margin: auto;
-   background: #4EADE5;
- }
-*/
-
 /* importing fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
 
@@ -23,7 +16,7 @@ html, body {
   background-position: center;
   background-attachment: fixed;
   color: #FFFF;
-  font-size: 20px;
+  font-size: 12pt;
   text-align: center;
 }
 
@@ -97,6 +90,10 @@ header h2{
   padding: 2em;
   grid-column: 1/7;
 }
+#single {
+  padding: 2em;
+  grid-column: 1/13;
+}
 
 #animalmain {
   padding: 2em;
@@ -104,11 +101,11 @@ header h2{
   grid-row: 4/8;
 }
 #logdive {
-t ext-align: center;
+  text-align: center;
 }
 /* Side bar explore menu that contains top divesites and top divers */
 #sideexplore {
-  padding: 3em;
+  padding: 2em;
   grid-column: 7/13;
 }
 #sideexplore h4 {
@@ -120,9 +117,11 @@ text-align: center;
 }
 
 #animalexplore {
-padding: 3em;
+padding-top: 2em;
+padding-bottom: 2em;
 grid-column: 7/13;
 grid-row: 4/8;
+text-align: center;
 }
 
 h1 {
@@ -158,6 +157,7 @@ strong {
   font-size: 12pt;
   padding: 0.2em 0.2em;
   margin-bottom: .5em;
+  align-self: center;
 }
 .select-class {
   position: relative;
@@ -257,7 +257,42 @@ img {
 height: 200px;
 width: 300px;
 }
-
+ul,ol {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  color: #91EACE;
+}
+li {
+  padding-left: 1em;
+  text-indent: -1em;
+  color: #91EACE;
+}
+li a {
+  color: #91EACE;
+}
+li:before {
+  content: "🐟";
+  padding-left: 20px;
+  color: #91EACE;
+}
+li#list-entry{
+  background: rgb(83,152,168,.7);
+  border-radius: 10px;
+  margin: 0.5em;
+  padding-bottom: 0.2em;
+  font-size: 11pt;
+  color: #91EACE;
+}
+li#list-entry.list-text:before{
+  background: rgb(83,152,168,.7);
+  border-radius: 10px;
+  margin: 0em;
+  padding-bottom: 0.2em;
+  font-size: 11pt;
+  padding-right: 6px;
+  color: #91EACE;
+}
 #scrollbar {
 /* width */
 ::-webkit-scrollbar {

@@ -6,25 +6,29 @@
     </head>
 
     <body>
+    <div class="content">
         <!-- top-bar start -->
-        <div id="header">
-            <strong>Dive Slate</strong>
-        </div>
+        <header>
+            <h1>Dive Slate</h1>
 
-        <div id="topbarmenu">
-            <%= link_to "Dashboard", dives_path %>
-            <%= link_to @user.username, user_path(@user) %>
-            <%= link_to "Logout", logout_path, method: :delete %>
+           <div id="topbarmenu">
+            <%= link_to "Dashboard", dives_path, {class: "button"} %>
+            <%= link_to @user.username, user_path(@user), {class: "button"}  %>
+            <label class="button"><%= link_to "Logout", logout_path, method: :delete %></label>
+           </div>
+        </header>
         </div>
         <!-- top-bar end -->
 
-        <div id="main">
+        <div id="login">
             <h4>Are you sure you want to delete your profile?</h4>
 
             <div class="form">
-                <%= link_to "Yes, delete my profile. <º))))><", @user, method: :delete %>
-                <br><br>
-                <%= link_to "Nevermind, go back!", dives_path %>
+                <div class="button">
+                <%=link_to "Delete My Profile ☠️", confirm_delete_path, {:class => "button"}  %>
+                </div>
+                <div class="button">
+                <%= link_to "Nevermind, go back!", dives_path %></div>
             </div>
         </div>
     </body>

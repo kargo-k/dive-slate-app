@@ -6,39 +6,33 @@
     </head>
 
     <body>
-      <div class='animalcontent'>
+          <div class="content">
         <!-- top-bar start -->
         <header>
-            <strong>Dive Slate</strong>
+            <h1>Dive Slate</h1>
 
-        <div id="topbarmenu">
-            <%= link_to "Dashboard", dives_path %>
-            <%= link_to @user.username, user_path(@user) %>
-            <%= link_to "Logout", logout_path, method: :delete %>
-        </div>
+           <div id="topbarmenu">
+            <%= link_to "Dashboard", dives_path, {class: "button"} %>
+            <%= link_to @user.username, user_path(@user), {class: "button"}  %>
+            <label class="button"><%= link_to "Logout", logout_path, method: :delete %></label>
+           </div>
         </header>
         <!-- top-bar end -->
-
         <div id="animalexplore">
             <h2><%=@marineanimal.name%>: </h2>
             <img src="<%=@marineanimal.url%>">
-
-            <br><br>
-
-            <div class="button">
-                <%= link_to 'Explore All Marine Animals', marineanimals_path %>
-            </div>
         </div>
 
         <div id="animalmain">
-          <h2>Marine Animals!</h2>
+          <h2>Explore Marine Life</h2>
 
           <ul>
             <% @marine.each do |animal| %>
-                <li><b><%= link_to animal.name, marineanimal_path(animal) %></b>
+                <li id="list-entry"><%= link_to animal.name, marineanimal_path(animal) %>
                 </li>
             <% end %>
           </ul>
+          <div class="button"><%= link_to "Add New Marine Life", new_marineanimal_path%></div>
         </div>
       </div>
     </body>
