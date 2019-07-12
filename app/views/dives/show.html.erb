@@ -23,8 +23,8 @@
         <div id="main">
           <h2><%= @dive.divesite.name %></h2>
 
-          <h3><% if @dive.diveshop %>
-            Dive Shop: <%= link_to @dive.diveshop.name, diveshop_path(@dive.diveshop) %>
+          <h3 id="diveshop"><% if @dive.diveshop %>
+            Dive Shop: <%= link_to @dive.diveshop.name, diveshop_path(@dive.diveshop), {class: "shopbutton"}%></ul>
           <% end %>
           </h3>
 
@@ -57,7 +57,7 @@
             <h3>Marine Life Seen:</h3>
             <ul>
                 <%@dive.marineanimals.each do |animal|%>
-                  <li><%= link_to animal.name, marineanimal_path(animal)%></li>
+                  <li id="list-entry"><%= link_to animal.name, marineanimal_path(animal)%></li>
                 <% end %>
             </ul>
 
