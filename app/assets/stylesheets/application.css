@@ -337,7 +337,7 @@ p.dateform label {
   margin-bottom: .3em;
 }
 .shopbutton {
-  background: rgb(83,152,168,.7);
+  background: rgba(83,152,168,.7);
   color: #fff;
   padding: 0.5em 1em;
   border-radius: 10px;
@@ -386,7 +386,7 @@ li:before {
   color: #fff;
 }
 li#list-entry{
-  background: rgb(83,152,168,.7);
+  background: rgba(83,152,168,.7);
   border-radius: 10px;
   margin: 0.5em;
   font-size: 10pt;
@@ -395,7 +395,7 @@ li#list-entry{
   text-align: justify;
 }
 li#list-entry.list-text:before{
-  background: rgb(83,152,168,.7);
+  background: rgba(83,152,168,.7);
   border-radius: 10px;
   margin: 0em;
   padding-bottom: 0.2em;
