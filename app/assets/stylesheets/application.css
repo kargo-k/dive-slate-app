@@ -403,8 +403,8 @@ li#list-entry.list-text:before{
   padding-right: 6px;
   color: #91EACE;
 }
-#scrollbar {
-/* width */
+
+
 ::-webkit-scrollbar {
 width: 10px;
 }
