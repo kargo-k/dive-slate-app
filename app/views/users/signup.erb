@@ -1,0 +1,34 @@
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
+
+    <body>
+        <!-- top-bar start -->
+        <div id="header">
+            <strong>Dive Slate</strong>
+        </div>
+        <!-- top-bar end -->
+
+        <!-- main area start -->
+        <div id="single">
+            <h2>New User Sign Up Form</h2>
+            <div class="form">
+                <%= form_for @user do |f| %>
+                    <%= f.label :username %>
+                    <%= f.text_field :username %>
+
+                    <br>
+                    <%= f.label :password %>
+                    <%= f.password_field :password %>
+
+                    <br><br>
+
+                    <%= f.submit %>
+                <% end %>
+            </div>
+        </div>
+    </body>
+</html>

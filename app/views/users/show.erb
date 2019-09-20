@@ -1,14 +1,44 @@
-<h2>🐟 <%=@user.username%> 🐟</h2>
-<h4> <%=@user.name%> </h4>
-<h4>Certification: </h4>
-<h5><%=@user.certification%></h5>
-<h4>Age: </h4>
-<h5><%=@user.age%></h5>
-<h4>Country: </h4>
-<h5><%=@user.country%></h5>
-<h4>Total Dives: </h4>
-<h5><%=@user.total_dives%></h5>
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
 
-<%=link_to "Home", users_path %> <br>
-<%=link_to "Edit", edit_user_path(@user) %> <br>
-<%= link_to "Show all my dives", divers_dives_path(@user)%>
+    <body>
+    <div class="content">
+        <!-- top-bar start -->
+        <header>
+            <h1>Dive Slate</h1>
+
+           <div id="topbarmenu">
+            <%= link_to "Dashboard", dives_path, {class: "button"} %>
+            <%= link_to @user.username, user_path(@user), {class: "button"}  %>
+            <label class="button"><%= link_to "Logout", logout_path, method: :delete %></label>
+           </div>
+        </header>
+        </div>
+        <!-- top-bar end -->
+
+        <!-- main area start -->
+        <div id="login" class="form">
+            <h2>🐟<br><%=@user.username%></h2>
+            
+            <h4><%=@user.name%></h4>
+            <h4><%=@user.country%></h4>
+            <h4><%=@user.certification%></h4>
+            <h4>Age: <%=@user.age%></h4>
+            
+            <h4>Total Dives: <%=@user.total_dives%></h4>
+
+            <div class="button">
+                <%= link_to "Edit Profile", edit_user_path(@user) %>
+            </div>
+
+            <div class="button">
+                <%= link_to "Delete Profile", confirm_delete_path %>
+            </div>
+
+        </div>
+    </body>
+</html>

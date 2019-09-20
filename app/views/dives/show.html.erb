@@ -1,46 +1,88 @@
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
 
- <h2>Showing a Specific Dive</h2>
-    <label>Dive Shop</label>
-    <%= @dive.diveshop.name %>
+    <body>
+      <div class="content">
+        <!-- top-bar start -->
+        <header>
+            <h1>Dive Slate</h1>
 
-    <br>
+           <div id="topbarmenu">
+            <%= link_to "Dashboard", dives_path, {class: "button"} %>
+            <%= link_to @user.username, user_path(@user), {class: "button"}  %>
+            <label class="button"><%= link_to "Logout", logout_path, method: :delete %></label>
+           </div>
+        </header>
+        <!-- top-bar end -->
 
-    <label>Dive Site</label>
-    <%= @dive.divesite.name %>
+        <!-- main area start -->
+        <div id="main">
+          <h2><%= @dive.divesite.name %></h2>
 
-    <br>
+          <h3 id="diveshop"><% if @dive.diveshop %>
+            Dive Shop: <%= link_to @dive.diveshop.name, diveshop_path(@dive.diveshop), {class: "shopbutton"}%></ul>
+          <% end %>
+          </h3>
 
-    <label>Date</label>
-    <%= @dive.date %>
+          <br>
 
-    <br>
+            <label>Date: </label>
+            <%= @dive.date %>
+            <br>
 
-    <label>Time</label>
-    <%= @dive.time%>
+            <label>Water Temperature: </label>
+            <%= @dive.water_T%>
+            <br>
 
-    <br>
+            <label>Air Temperature: </label>
+            <%= @dive.air_T%>
+            <br>
 
-    <label>Water Temperature</label>
-    <%= @dive.water_T%>
+            <label>Depth (m): </label>
+            <%= @dive.depth%>
+            <br>
 
-    <br>
+            <h3>Dive Equipment Used</h3>
+            <ul>
+            <% @dive.equipment.each do |equipment| %>
+              <li><%= equipment.name.capitalize %></li>
+            <% end %>
+            </ul>
+        </div>
+          <div id="sideexplore">
+            <h3>Marine Life Seen:</h3>
+            <ul>
+                <%@dive.marineanimals.each do |animal|%>
+                  <li id="list-entry"><%= link_to animal.name, marineanimal_path(animal)%></li>
+                <% end %>
+            </ul>
 
-    <label>Air Temperature</label>
-    <%= @dive.air_T%>
+            <h3>Highlights/Notes: </h3>
+              <%= @dive.description %>
+              <br>
+              <br>
+              <br>
 
-    <br>
+              <div class="button">
+              <%= link_to "Edit Dive", edit_dive_path(@dive) %> <br>
+              </div>
+              <div class="button">
+              <%= link_to "Delete Dive", delete_dive_path(@dive), method: :delete %> <br>
+              </div>
 
-    <label>Depth (m)</label>
-    <%= @dive.depth%>
+              <div class="button">
+                <%= link_to "Log a New Dive", new_dive_path  %>
+              </div>
 
-    <br>
+              <div class="button">
 
-    <label>Notes/Description</label>
-    <%= @dive.description %>
-
-    <br>
-    <br>
-
-<%= link_to "Show all my dives", divers_dives_path(@dive.user)%>
-<%= link_to "View my profile", user_path(@dive.user)%>
-
+              <%= link_to "Show all my dives", dives_path%><br>
+              </div>
+          </div>
+        </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+      <body>
+          <div class="content">
+        <!-- top-bar start -->
+        <header>
+            <h1>Dive Slate</h1>
+
+           <div id="topbarmenu">
+            <%= link_to "Dashboard", dives_path, {class: "button"} %>
+            <%= link_to @user.username, user_path(@user), {class: "button"}  %>
+            <label class="button"><%= link_to "Logout", logout_path, method: :delete %></label>
+           </div>
+        </header>
+        <!-- top-bar end -->
+            <div id="login" class="form">
+              <h3>Add New Marine Life</h3>
+                <%=render 'form'%>
+            </div>
+        </div>
+    </body>
+</html>

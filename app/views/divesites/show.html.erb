@@ -1,3 +1,37 @@
-<h2><%= @divesite.name %></h2>
-<h4>Latitude: <%= @divesite.latitude %></h4>
-<h4>Longitude: <%= @divesite.longitude %></h4>
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
+
+    <body>
+      <div class="content">
+        <!-- top-bar start -->
+        <header>
+            <h1>Dive Slate</h1>
+
+           <div id="topbarmenu">
+            <%= link_to "Dashboard", dives_path, {class: "button"} %>
+            <%= link_to @user.username, user_path(@user), {class: "button"}  %>
+            <label class="button"><%= link_to "Logout", logout_path, method: :delete %></label>
+           </div>
+        </header>
+        <!-- top-bar end -->
+
+        <!-- main area start -->
+        <div id="single">
+            <h2><%= @divesite.name %></h2>
+            <h4>Latitude: <%= @divesite.latitude %></h4>
+            <h4>Longitude: <%= @divesite.longitude %></h4>
+
+            <h4>Number of Dives Completed Here: <%= @divesite.dives.count %></h4>
+
+            <div class="button">
+                <%= link_to "See all Divesites", divesites_path %>
+            </div>
+
+         </div>
+      </div>
+    </body>
+</html>

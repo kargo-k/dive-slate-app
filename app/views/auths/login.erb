@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate 🐠</title>
+    </head>
+    <body>
+            <div id="login" class="form-input-container">
+            <div class="bordered"><h1>Dive Slate</h1></div>
+            <h2>🐙</h2>
+            <%=form_for(:auth, url: login_path) do |f| %>
+                    <p><%=f.label :username %>
+                    <%=f.text_field :username, class: 'inputfield'%></p>
+
+                <p><%=f.label :password %>
+                <%=f.password_field :password, class: 'inputfield' %></p>
+            <%=f.submit "Login", {:class => "button"}%>
+            <%end%>
+            <%= link_to "New User? Sign up here!", signup_path, {:class => "button"} %>
+            </div> 
+        
+        <% if flash[:error] %>
+            <div class="error" style="color:red"><%= flash[:error] %></div>
+        <% end %>
+        
+    </body>
+</html>

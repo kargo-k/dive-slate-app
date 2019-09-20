@@ -1,1 +1,39 @@
-<%= render 'form' %>
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
+
+    <body>
+    <div class="content">
+        <!-- top-bar start -->
+        <header>
+            <h1>Dive Slate</h1>
+
+           <div id="topbarmenu">
+            <%= link_to "Dashboard", dives_path, {class: "button"} %>
+            <%= link_to @user.username, user_path(@user), {class: "button"}  %>
+            <label class="button"><%= link_to "Logout", logout_path, method: :delete %></label>
+           </div>
+        </header>
+        </div>
+        <!-- top-bar end -->
+    <div id="login" class="form">
+            <h2>🐠<br>Update Your Profile</h2>
+
+            <div class="form">
+                <%= render 'form' %>
+            </div>
+
+            <div class="button">
+                    <%= link_to "Go to my Dashboard", dives_path, {:class => "button"} %>
+            </div>
+
+            <div class="button">
+                <%=link_to "Delete My Profile ☠️", confirm_delete_path, {:class => "button"}  %>
+            </div>
+            
+    </div>
+    </body>
+</html>

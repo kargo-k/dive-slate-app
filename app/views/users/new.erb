@@ -1,1 +1,42 @@
-<%= render 'form' %>
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
+    <body>
+        <div id="login" class="form">
+            <div class="bordered"><h1>Dive Slate</h1></div>
+
+        <h2>🐠<br>Create an Account</h2>
+
+            <%= form_for @user do |f| %>
+                <div class="form-input-container">
+                <p><%= f.label "Username:" %>
+                <%= f.text_field :username, class: 'inputfield' %> </p>
+
+                <p><%= f.label "Password:" %>
+                <%= f.password_field :password, class: 'inputfield'  %></p>
+
+                <p><%= f.label "Password:" %>
+                <%= f.password_field :password_confirmation, class: 'inputfield'  %></p>
+
+                </div>
+
+                <%= f.submit "Sign Up", {:class => "button"}%>
+                
+            <% end %>
+                <%= link_to "Go back to Log In", login_path, {:class => "button"} %>
+        </div>
+
+        
+
+                <% if flash[:username_error] %>
+                    <div class="error" style="color:red">Username already exists!</div>
+                <% end %>
+                <% if flash[:password_error] %>
+                    <div class="error" style="color:red">Passwords do not match!</div>
+                <% end %>
+
+    </body>
+</html>

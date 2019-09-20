@@ -1,6 +1,37 @@
-<h2>All Dive Sites</h2>
-<ul>
-    <% @divesites.each do |divesite| %>
-        <li><%= link_to divesite.name, divesite %></li>
-    <% end %>
-</ul>
+<%= stylesheet_link_tag"application.css"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dive Slate</title>
+    </head>
+
+    <body>
+          <div class="content">
+        <!-- top-bar start -->
+        <header>
+            <h1>Dive Slate</h1>
+
+           <div id="topbarmenu">
+            <%= link_to "Dashboard", dives_path, {class: "button"} %>
+            <%= link_to @user.username, user_path(@user), {class: "button"}  %>
+            <label class="button"><%= link_to "Logout", logout_path, method: :delete %></label>
+           </div>
+        </header>
+        <!-- top-bar end -->
+
+        <!-- main area start -->
+        <div id="single">
+            <h2>All Dive Sites</h2>
+            <ol>
+                <% @divesites.each do |divesite| %>
+                    <li id="list-entry"><%= link_to divesite.name, divesite %></li>
+                <% end %>
+            </ol>
+
+            <div class="button">
+                <%= link_to "Sort by Popularity", sorted_divesites_path, method: :post %>
+            </div>
+        </div>
+      </div>
+    </body>
+</html>

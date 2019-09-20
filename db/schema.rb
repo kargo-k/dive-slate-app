@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_233211) do
+ActiveRecord::Schema.define(version: 2019_07_11_194021) do
 
   create_table "dive_equipments", force: :cascade do |t|
     t.integer "dive_id"
@@ -19,12 +19,18 @@ ActiveRecord::Schema.define(version: 2019_07_09_233211) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "dive_marineanimals", force: :cascade do |t|
+    t.integer "dive_id"
+    t.integer "marineanimal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "dives", force: :cascade do |t|
     t.integer "user_id"
     t.integer "diveshop_id"
     t.integer "divesite_id"
-    t.string "date"
-    t.string "time"
+    t.datetime "date", default: "-4712-01-01 00:00:00"
     t.integer "water_T"
     t.integer "air_T"
     t.integer "depth"
@@ -51,18 +57,26 @@ ActiveRecord::Schema.define(version: 2019_07_09_233211) do
 
   create_table "equipment", force: :cascade do |t|
     t.string "name"
+    t.string "specs"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "marineanimals", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.string "name"
     t.string "certification"
     t.integer "age"
     t.string "country"
-    t.integer "total_dives"
+    t.integer "total_dives", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
