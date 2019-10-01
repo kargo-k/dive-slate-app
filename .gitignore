@@ -1,7 +1,7 @@
 # Ignores folders
 tmp
 log
-tmp/cache/.
+
 
 # Ignore db
 *.db
